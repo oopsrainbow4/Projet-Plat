@@ -4,7 +4,7 @@ namespace TestMovement2.PlayerSetup;
 
 /// <summary>
 /// Handles the player's movement, including walking, jumping, and smooth deceleration.
-/// Split into multiple partial class files for better organization.
+/// 
 /// </summary>
 public partial class Movement
 {
