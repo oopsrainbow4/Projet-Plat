@@ -16,7 +16,6 @@ public partial class Movement
     public void SetupCollisionEvents(PhysicsObject playerObject)
     {
         // Tag the floor object for easy identification in collision events
-        //floor.Tag = "Floor";
         
         string[] layoutTags = { "Block", "Spike"};
 
