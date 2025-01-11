@@ -28,9 +28,6 @@ public class Environment
         // Set up the background image and its properties.
         SetupBackground();
 
-        // Create the floor object and add it to the game.
-        floor = CreateFloor(game);
-
         // Start the timer that updates the background position based on the player's movement.
         StartBackgroundUpdateTimer();
     }
@@ -62,43 +59,6 @@ public class Environment
 
         // Add the background to the game at layer -1, ensuring it appears behind everything else.
         game.Add(backgroundObject, -1);
-    }
-
-    /// <summary>
-    /// Creates the floor object and adds it to the game.
-    /// </summary>
-    /// <param name="gameInstance">The current game instance.</param>
-    /// <returns>The floor object.</returns>
-    private PhysicsObject CreateFloor(Game gameInstance)
-    {
-        // Create a large static floor object.
-        PhysicsObject newFloor = PhysicsObject.CreateStaticObject(10000, 20);
-        newFloor.X = 0;
-        newFloor.Y = -200;
-        newFloor.Shape = Shape.Rectangle;
-        newFloor.Color = Color.DarkGray; // Make the floor visible
-        newFloor.Tag = "Floor"; // Tag the object for identification.
-        gameInstance.Add(newFloor);
-
-        // Create a test object (e.g., a vertical wall or obstacle).
-        PhysicsObject testObject = PhysicsObject.CreateStaticObject(20, 100);
-        testObject.X = 100;
-        testObject.Y = -150;
-        testObject.Shape = Shape.Rectangle;
-        testObject.Color = Color.DarkGray; // Make the floor visible
-        testObject.Tag = "Floor"; // Tag the object for identification.
-        gameInstance.Add(testObject);
-
-        return newFloor; // Return the main floor object.
-    }
-
-    /// <summary>
-    /// Retrieves the floor object.
-    /// </summary>
-    /// <returns>The floor object.</returns>
-    public PhysicsObject GetFloor()
-    {
-        return floor; // Provide access to the floor object if needed elsewhere.
     }
 
     /// <summary>

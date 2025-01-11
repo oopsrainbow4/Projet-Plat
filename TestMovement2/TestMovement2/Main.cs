@@ -34,11 +34,11 @@ public class Main : PhysicsGame
 
         // Initialize environment and set up controls
         environment = new Environment();
-        environment.Setup(this); // Adds gravity, background and creates the floor
+        environment.Setup(this); // Adds gravity and background 
         environment.SetPlayer(player.GetPlayerObject());
             
-        // Set up collision events between the player and the floor
-        movement.SetupCollisionEvents(player.GetPlayerObject(), environment.GetFloor());
+        // Set up collision events from the player
+        movement.SetupCollisionEvents(player.GetPlayerObject());
 
         // Start deceleration logic and controls
         movement.SetupControls();

@@ -13,17 +13,18 @@ public partial class Movement
     /// Sets up collision events for the player and the floor.
     /// </summary>
     /// <param name="playerObject">The player's PhysicsObject.</param>
-    /// <param name="floor">The floor PhysicsObject.</param>
-    public void SetupCollisionEvents(PhysicsObject playerObject, PhysicsObject floor)
+    public void SetupCollisionEvents(PhysicsObject playerObject)
     {
         // Tag the floor object for easy identification in collision events
-        floor.Tag = "Floor";
+        //floor.Tag = "Floor";
+        
+        string[] layoutTags = { "Block", "Spike"};
 
         // Detect when the player collides with the floor
         player.Collided += (_, target) =>
         {
             // Check if the target of the collision is the floor
-            if (target.Tag != null && target.Tag.ToString() == "Floor")
+            if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
             {
                 isOnGround = true; // Player is on the ground
                 isDoubleJumpingAllowed = true; // Reset double jump capability

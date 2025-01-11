@@ -35,8 +35,8 @@ public class MapModule
                 char tile = line[x];
                 
                 // Calculate block position
-                double posX = x * blockWidth - (layout[0].Length / 2.0) * blockWidth;
-                double posY = -(y * blockHeight - (layout.Length / 2.0) * blockHeight);
+                double posX = x * blockWidth - (layout[0].Length / 1.99) * blockWidth;
+                double posY = -(y * blockHeight - (layout.Length / 1.99) * blockHeight);
                 
                 if (tile == '#') //Land
                 {

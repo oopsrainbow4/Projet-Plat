@@ -19,7 +19,7 @@ public class Spike
     /// </summary>
     public void CreateSpike(double x, double y, double width, double height)
     {
-        PhysicsObject spike = PhysicsObject.CreateStaticObject(width, height / 2);
+        PhysicsObject spike = PhysicsObject.CreateStaticObject(width, height);
         spike.Shape = Shape.Triangle;
         spike.Color = Color.White;
         spike.X = x;
