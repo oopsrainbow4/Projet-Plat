@@ -5,11 +5,11 @@ namespace TestMovement2.MapLayoutFolder.LayoutDesign;
 /// <summary>
 /// Handles the creation of land blocks in the game world.
 /// </summary>
-public class Land
+public class Block
 {
     private PhysicsGame game;
 
-    public Land(PhysicsGame gameInstance)
+    public Block(PhysicsGame gameInstance)
     {
         game = gameInstance;
     }
@@ -19,13 +19,13 @@ public class Land
     /// </summary>
     public void CreateLandBlock(double x, double y, double width, double height)
     {
-        PhysicsObject landBlock = PhysicsObject.CreateStaticObject(width, height);
-        landBlock.Shape = Shape.Rectangle;
-        landBlock.Color = Color.Gray;
-        landBlock.X = x;
-        landBlock.Y = y;
-        landBlock.Tag = "Land";
+        PhysicsObject Block = PhysicsObject.CreateStaticObject(width, height);
+        Block.Shape = Shape.Rectangle;
+        Block.Color = Color.Gray;
+        Block.X = x;
+        Block.Y = y;
+        Block.Tag = "Block";
         
-        game.Add(landBlock);
+        game.Add(Block);
     }
 }

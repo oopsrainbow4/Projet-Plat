@@ -8,12 +8,12 @@ namespace TestMovement2.MapLayoutFolder;
 /// </summary>
 public class MapModule
 {
-    private Land landCreator;
+    private Block blockCreator;
     private Spike spikeCreator;
 
     public MapModule(PhysicsGame gameInstance)
     {
-        landCreator = new Land(gameInstance); // Initialize the Land module
+        blockCreator = new Block(gameInstance); // Initialize the Land module
         spikeCreator = new Spike(gameInstance);
     }
     
@@ -40,7 +40,7 @@ public class MapModule
                 
                 if (tile == '#') //Land
                 {
-                    landCreator.CreateLandBlock(posX, posY, blockWidth, blockHeight);
+                    blockCreator.CreateLandBlock(posX, posY, blockWidth, blockHeight);
                 }
                 else if (tile == '^') // Spike
                 {
