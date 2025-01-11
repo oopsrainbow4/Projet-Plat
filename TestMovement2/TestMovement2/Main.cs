@@ -1,6 +1,8 @@
 using Jypeli;
 
 using TestMovement2.PlayerSetup;
+using TestMovement2.MapLayoutFolder;
+using TestMovement2.MapLayoutFolder.LayoutDesign;
 
 namespace TestMovement2;
 
@@ -17,6 +19,9 @@ public class Main : PhysicsGame
     private CameraSetup cameraSetup;
     
     private Environment environment;
+    
+    private MapModule mapModule;
+    private MapLayout mapLayout;
     
     public override void Begin()
     {
@@ -43,5 +48,13 @@ public class Main : PhysicsGame
         cameraSetup = new CameraSetup(player.GetPlayerObject(), this);
         cameraSetup.SetupCamera(); // Attach the camera to the player
         cameraSetup.SetZoom(0.8);  // Optional: Adjust the zoom level
+        
+        // Initialize the map layout system
+        mapLayout = new MapLayout();
+        mapModule = new MapModule(this);
+        
+        // Generate the map from the layout
+        string[] layout = mapLayout.GetLayout();
+        mapModule.GenerateMap(layout);
     }
 }
