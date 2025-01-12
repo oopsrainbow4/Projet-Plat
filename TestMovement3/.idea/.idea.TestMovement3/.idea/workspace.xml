@@ -7,15 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMovement3/Environment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/Environment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMovement3/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/CreatePlayer.cs" afterDir="false" />
-    </list>
+    <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +82,7 @@
       <workItem from="1735894320443" duration="67000" />
       <workItem from="1736256024654" duration="186000" />
       <workItem from="1736256610972" duration="355000" />
-      <workItem from="1736697164429" duration="628000" />
+      <workItem from="1736697164429" duration="713000" />
     </task>
     <servers />
   </component>
