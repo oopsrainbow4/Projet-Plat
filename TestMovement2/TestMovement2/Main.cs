@@ -14,7 +14,7 @@ namespace TestMovement2;
 /// </summary>
 public class Main : PhysicsGame
 {
-    private Player player;
+    private CreatePlayer createPlayer;
     private Movement movement;
     private CameraSetup cameraSetup;
     
@@ -26,26 +26,26 @@ public class Main : PhysicsGame
     public override void Begin()
     {
         // Initialize the player
-        player = new Player();
-        player.Setup(this); // Creates the player's PhysicsObject and adds it to the game
+        createPlayer = new CreatePlayer();
+        createPlayer.Setup(this); // Creates the player's PhysicsObject and adds it to the game
 
         // Initialize movement system with the player's object
-        movement = new Movement(player.GetPlayerObject(), this);
+        movement = new Movement(createPlayer.GetPlayerObject(), this);
 
         // Initialize environment and set up controls
         environment = new Environment();
         environment.Setup(this); // Adds gravity and background 
-        environment.SetPlayer(player.GetPlayerObject());
+        environment.SetPlayer(createPlayer.GetPlayerObject());
             
         // Set up collision events from the player
-        movement.SetupCollisionEvents(player.GetPlayerObject());
+        movement.SetupCollisionEvents(createPlayer.GetPlayerObject());
 
         // Start deceleration logic and controls
         movement.SetupControls();
         movement.DecelerationTimer();
         
         // Initialize the camera setup
-        cameraSetup = new CameraSetup(player.GetPlayerObject(), this);
+        cameraSetup = new CameraSetup(createPlayer.GetPlayerObject(), this);
         cameraSetup.SetupCamera(); // Attach the camera to the player
         cameraSetup.SetZoom(0.8);  // Optional: Adjust the zoom level
         
