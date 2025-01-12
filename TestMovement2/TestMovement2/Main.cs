@@ -2,7 +2,6 @@ using Jypeli;
 
 using TestMovement2.PlayerSetup;
 using TestMovement2.MapLayoutFolder;
-using TestMovement2.MapLayoutFolder.LayoutDesign;
 
 namespace TestMovement2;
 

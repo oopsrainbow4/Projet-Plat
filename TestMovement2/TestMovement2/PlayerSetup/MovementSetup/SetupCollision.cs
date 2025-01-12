@@ -30,7 +30,7 @@ public partial class Movement
             }
         };
 
-        // Timer to check if the player is no longer colliding with the floor
+        // Timer to check if the player is no longer colliding with the block
         Timer groundCheckTimer = new Timer
         {
             Interval = 0.1 // Check every 0.1 seconds
