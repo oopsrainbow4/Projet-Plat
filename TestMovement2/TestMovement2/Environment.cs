@@ -7,7 +7,6 @@ namespace TestMovement2;
 /// </summary>
 public class Environment
 {
-    private PhysicsObject floor; // The main floor object where the player stands.
     private PhysicsObject player; // The player object, used to track movement.
     private PhysicsGame game; // The main game instance, used to access game functionality.
     private PhysicsObject backgroundObject; // The background image object.

@@ -10,7 +10,7 @@ namespace Projet_Plat.PlayerSetup;
 /// <summary>
 /// Represents the player in the game, encapsulating its properties and logic.
 /// </summary>
-public class Player
+public class CreatePlayer
 {
     private PhysicsObject player;
 
