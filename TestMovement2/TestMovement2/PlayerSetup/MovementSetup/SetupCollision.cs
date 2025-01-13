@@ -20,13 +20,26 @@ public partial class Movement
         string[] layoutTags = { "Block", "Spike", "HealingBox"};
 
         // Detect when the player collides with the floor
-        player.Collided += (_, target) =>
+        playerObject.Collided += (_, target) =>
         {
             // Check if the target of the collision is the floor
             if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
             {
-                isOnGround = true; // Player is on the ground
-                isDoubleJumpingAllowed = true; // Reset double jump capability
+                if (target.Tag.ToString() == "Block")
+                {
+                    isOnGround = true; // Player is on the ground
+                    isDoubleJumpingAllowed = true; // Reset double jump capability
+                }
+                else if (target.Tag.ToString() == "Spike")
+                {
+                    playerHP.Value -= 1; // Reduce player's HP by 1
+                    // Optional: Add feedback (e.g., flash player, play sound, etc.)
+                }
+                else if (target.Tag.ToString() == "HealingBox")
+                {
+                    playerHP.Value += 1; // Heal the player by 1 HP
+                    // Optional: Add visual or sound feedback
+                }
             }
         };
 
