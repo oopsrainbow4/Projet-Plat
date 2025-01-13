@@ -42,7 +42,7 @@ public class CreatePlayer
         game.Add(hpLabel);
 
         // Update the GUI whenever HP changes
-        playerHP.Changed += () =>
+        playerHP.Changed += delegate
         {
             hpLabel.Text = "HP: " + playerHP.Value;
         };

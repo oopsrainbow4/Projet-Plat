@@ -1,19 +1,16 @@
 using System;
-using System.Collections.Generic;
 using Jypeli;
-using Jypeli.Assets;
-using Jypeli.Controls;
-using Jypeli.Widgets;
 
 namespace TestMovement2.PlayerSetup;
 
-public partial class Movement
+public partial class MovementMain
 {
     /// <summary>
     /// Sets up collision events for the player and the floor.
     /// </summary>
     /// <param name="playerObject">The player's PhysicsObject.</param>
-    public void SetupCollisionEvents(PhysicsObject playerObject)
+    /// <param name="playerHP"></param>
+    public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP)
     {
         // Tag the floor object for easy identification in collision events
         
@@ -25,12 +22,10 @@ public partial class Movement
             // Check if the target of the collision is the floor
             if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
             {
-                if (target.Tag.ToString() == "Block")
-                {
-                    isOnGround = true; // Player is on the ground
-                    isDoubleJumpingAllowed = true; // Reset double jump capability
-                }
-                else if (target.Tag.ToString() == "Spike")
+                isOnGround = true; // Player is on the ground
+                isDoubleJumpingAllowed = true; // Reset double jump capability
+                
+                if (target.Tag.ToString() == "Spike")
                 {
                     playerHP.Value -= 1; // Reduce player's HP by 1
                     // Optional: Add feedback (e.g., flash player, play sound, etc.)
