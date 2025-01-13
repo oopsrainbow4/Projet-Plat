@@ -17,7 +17,7 @@ public partial class Movement
     {
         // Tag the floor object for easy identification in collision events
         
-        string[] layoutTags = { "Block", "Spike"};
+        string[] layoutTags = { "Block", "Spike", "HealingBox"};
 
         // Detect when the player collides with the floor
         player.Collided += (_, target) =>

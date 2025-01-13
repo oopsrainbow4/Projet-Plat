@@ -7,14 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/LayoutDesign/Block.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/LayoutDesign/Spike.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/MapLayout.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/MapModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/PlayerSetup/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/PlayerSetup/CreatePlayer.cs" afterDir="false" />
-    </list>
+    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="" />
     <list id="8d296318-e99e-4d14-91b4-1368a73b31c1" name="Changes by gr301851" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +80,7 @@
       <workItem from="1736343091607" duration="41000" />
       <workItem from="1736343468515" duration="1054000" />
       <workItem from="1736509254148" duration="295000" />
-      <workItem from="1736702716074" duration="303000" />
+      <workItem from="1736702716074" duration="603000" />
     </task>
     <servers />
   </component>
