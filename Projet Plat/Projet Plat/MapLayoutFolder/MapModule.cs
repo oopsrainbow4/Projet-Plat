@@ -10,11 +10,13 @@ public class MapModule
 {
     private Block blockCreator;
     private Spike spikeCreator;
+    private HealingBox healingBoxCreator;
 
     public MapModule(PhysicsGame gameInstance)
     {
         blockCreator = new Block(gameInstance); // Initialize the Land module
         spikeCreator = new Spike(gameInstance);
+        healingBoxCreator = new HealingBox(gameInstance);
     }
     
     /// <summary>
@@ -45,6 +47,10 @@ public class MapModule
                 else if (tile == '^') // Spike
                 {
                     spikeCreator.CreateSpike(posX, posY, blockWidth, blockHeight);
+                }
+                else if (tile == '+') // Healing Box
+                {
+                    healingBoxCreator.CreateHealingBox(posX, posY, blockWidth, blockHeight);
                 }
             }
         }

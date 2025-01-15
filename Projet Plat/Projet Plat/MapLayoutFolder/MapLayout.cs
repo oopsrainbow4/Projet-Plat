@@ -5,13 +5,9 @@ namespace Projet_Plat.MapLayoutFolder;
 /// </summary>
 public class MapLayout
 {
-    /// <summary>
-    /// Returns the map layout as a string array.
-    /// </summary>
-    
-    /// "#" Block
+    /// "#" Land
     /// "^" Spike
-     
+    /// "+" Healing Box
     public string[] GetLayout()
     {
         return new[]
@@ -20,7 +16,7 @@ public class MapLayout
             "                 ",
             "                 ",
             "  ##             ",
-            " ##  #^#         ",
+            " ##  #^#   +      ",
             "#####  #######^^ "
         };
     }

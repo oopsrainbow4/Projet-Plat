@@ -10,7 +10,7 @@ namespace Projet_Plat.PlayerSetup;
 /// <summary>
 /// Handles setting up player controls for movement and jumping.
 /// </summary>
-public partial class Movement
+public partial class MovementMain
 {
     /// <summary>
     /// Sets up keyboard controls for the player's movement and actions.
