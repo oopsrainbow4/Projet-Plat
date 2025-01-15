@@ -1,11 +1,14 @@
 using System;
-using System.Collections.Generic;
 using Jypeli;
 
 namespace TestMovement2.PlayerSetup;
 
 public partial class MovementMain
 {
+    // Add to class-level variables
+    private bool isInvincible; // Tracks if the player is invincible
+    private Timer invincibilityTimer;  // Timer to handle invincibility duration
+    
     /// <summary>
     /// Sets up collision events for the player and the floor.
     /// </summary>
@@ -17,19 +20,29 @@ public partial class MovementMain
         
         string[] layoutTags = { "Block", "Spike", "HealingBox"};
 
+        // Initialize the invincibility timer
+        invincibilityTimer = new Timer
+        {
+            Interval = 2.0 // 2 seconds of invincibility
+        };
+        invincibilityTimer.Timeout += () => { isInvincible = false; }; // Turn off invincibility
+
         // Detect when the player collides with the floor
         playerObject.Collided += (_, target) =>
         {
-            // Check if the target of the collision is the floor
             if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
             {
-                isOnGround = true; // Player is on the ground
-                isDoubleJumpingAllowed = true; // Reset double jump capability
-                
+                isOnGround = true;
+                isDoubleJumpingAllowed = true;
+
                 if (target.Tag.ToString() == "Spike")
                 {
-                    playerHP.Value -= 1; // Reduce player's HP by 1
-                    // Optional: Add feedback (e.g., flash player, play sound, etc.)
+                    if (!isInvincible) // Only lose HP if not invincible
+                    {
+                        playerHP.Value -= 1; // Reduce HP by 1
+                        ActivateInvincibility(); // Start invincibility
+                        ApplyKnockback(playerObject, target); // Apply knockback effect
+                    }
                 }
                 else if (target.Tag.ToString() == "HealingBox")
                 {
@@ -52,5 +65,20 @@ public partial class MovementMain
         };
 
         groundCheckTimer.Start(); // Start the timer
+    }
+
+    // Activates invincibility for the player
+    private void ActivateInvincibility()
+    {
+        isInvincible = true;  // Set invincible status
+        invincibilityTimer.Start(); // Start the timer
+    }
+    
+    // Applies knockback to the player when they touch a spike
+    private void ApplyKnockback(PhysicsObject playerCharacter, IPhysicsObject spike)
+    {
+        // Determine the direction of knockback based on relative positions
+        Vector knockbackDirection = (playerCharacter.Position - spike.Position).Normalize();
+        player.Velocity = knockbackDirection * 600; // Apply knockback velocity (adjust the multiplier as needed)
     }
 }
