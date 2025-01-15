@@ -6,7 +6,7 @@ namespace TestMovement3.PlayerSetup;
 /// Handles the player's movement, including walking, jumping, and smooth deceleration.
 /// Split into multiple partial class files for better organization.
 /// </summary>
-public partial class Movement
+public partial class MovementMain
 {
     // Reference to the player's PhysicsObject
     private PhysicsObject player;
@@ -29,7 +29,7 @@ public partial class Movement
     /// </summary>
     /// <param name="playerObject">The PhysicsObject representing the player.</param>
     /// <param name="gameInstance">The main game instance.</param>
-    public Movement(PhysicsObject playerObject, Game gameInstance)
+    public MovementMain(PhysicsObject playerObject, Game gameInstance)
     {
         // Assign the player object and game instance
         player = playerObject;

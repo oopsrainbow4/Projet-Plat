@@ -14,7 +14,7 @@ namespace TestMovement3;
 public class Main : PhysicsGame
 {
     private CreatePlayer createPlayer;
-    private Movement movement;
+    private MovementMain movementMain;
     private CameraSetup cameraSetup;
     
     private Environment environment;
@@ -29,7 +29,7 @@ public class Main : PhysicsGame
         createPlayer.Setup(this); // Creates the player's PhysicsObject and adds it to the game
 
         // Initialize movement system with the player's object
-        movement = new Movement(createPlayer.GetPlayerObject(), this);
+        movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
 
         // Initialize environment and set up controls
         environment = new Environment();
@@ -37,11 +37,11 @@ public class Main : PhysicsGame
         environment.SetPlayer(createPlayer.GetPlayerObject());
             
         // Set up collision events between the player and the floor
-        movement.SetupCollisionEvents(createPlayer.GetPlayerObject());
+        movementMain.SetupCollisionEvents(createPlayer.GetPlayerObject(), createPlayer.playerHP);
 
         // Start deceleration logic and controls
-        movement.SetupControls();
-        movement.DecelerationTimer();
+        movementMain.SetupControls();
+        movementMain.DecelerationTimer();
         
         // Initialize the camera setup
         cameraSetup = new CameraSetup(createPlayer.GetPlayerObject(), this);

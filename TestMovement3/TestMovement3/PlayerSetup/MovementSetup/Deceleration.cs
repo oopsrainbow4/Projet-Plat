@@ -10,7 +10,7 @@ namespace TestMovement3.PlayerSetup;
 /// <summary>
 /// Handles smooth deceleration of the player's movement.
 /// </summary>
-public partial class Movement
+public partial class MovementMain
 {
     /// <summary>
     /// Gradually reduces the player's horizontal velocity to simulate friction.
