@@ -14,7 +14,7 @@ namespace Projet_Plat;
 public class Main : PhysicsGame
 {
     private CreatePlayer createPlayer;
-    private MovementMain _movementMain;
+    private MovementMain movementMain;
     private CameraSetup cameraSetup;
     
     private Environment environment;
@@ -24,36 +24,43 @@ public class Main : PhysicsGame
     
     public override void Begin()
     {
+        // Initialize the map layout system
+        mapLayout = new MapLayout();
+        mapModule = new MapModule(this);
+                
+        // Generate the map from the layout
+        string[] layout = mapLayout.GetLayout();
+        mapModule.GenerateMap(layout);
+        
+        // Get the spawn point from the map
+        Vector spawnPoint = mapModule.GetSpawnPoint();
+        
         // Initialize the player
         createPlayer = new CreatePlayer();
-        createPlayer.Setup(this); // Creates the player's PhysicsObject and adds it to the game
+        createPlayer.Setup(this, spawnPoint); // Creates the player's PhysicsObject and adds it to the game
 
         // Initialize movement system with the player's object
-        _movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
+        movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
 
         // Initialize environment and set up controls
         environment = new Environment();
-        environment.Setup(this); // Adds gravity, background and creates the floor
+        environment.Setup(this); // Adds gravity and background 
         environment.SetPlayer(createPlayer.GetPlayerObject());
             
-        // Set up collision events between the player and the floor
-        _movementMain.SetupCollisionEvents(createPlayer.GetPlayerObject(), createPlayer.playerHP);
+        // Set up collision events from the player
+        movementMain.SetupCollisionEvents(createPlayer.GetPlayerObject(), createPlayer.playerHP);
 
         // Start deceleration logic and controls
-        _movementMain.SetupControls();
-        _movementMain.DecelerationTimer();
+        movementMain.SetupControls();
+        movementMain.DecelerationTimer();
         
         // Initialize the camera setup
         cameraSetup = new CameraSetup(createPlayer.GetPlayerObject(), this);
         cameraSetup.SetupCamera(); // Attach the camera to the player
         cameraSetup.SetZoom(0.8);  // Optional: Adjust the zoom level
         
-        // Initialize the map layout system
-        mapLayout = new MapLayout();
-        mapModule = new MapModule(this);
-        
-        // Generate the map from the layout
-        string[] layout = mapLayout.GetLayout();
-        mapModule.GenerateMap(layout);
+        // Initialize respawn logic
+        Respawn respawn = new Respawn(createPlayer.GetPlayerObject(), createPlayer.playerHP, spawnPoint);
+        respawn.StartRespawnTimer();
     }
 }

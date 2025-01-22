@@ -10,7 +10,7 @@ public class CreatePlayer
     private PhysicsObject player;
     public IntMeter playerHP;
 
-    public void Setup(Game game)
+    public void Setup(Game game, Vector spawnPosition)
     {
         // Create the player (a block with width and height)
         player = new PhysicsObject(50, 50); // Size of the block
@@ -18,8 +18,9 @@ public class CreatePlayer
         Image playerimage = Game.LoadImage("PlayerImages/Yellow.png");
         player.Image = playerimage;
         
-        player.X = 0;
-        player.Y = 0;
+        // Set initial position to the spawn point
+        player.X = spawnPosition.X;
+        player.Y = spawnPosition.Y;
         player.Mass = 1;
         player.Restitution = 0.2; // Slight bounce
         game.Add(player);
