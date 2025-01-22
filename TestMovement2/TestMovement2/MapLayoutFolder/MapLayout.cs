@@ -9,16 +9,17 @@ public class MapLayout
     /// "^" Spike
     /// "+" Healing Box
     /// "s" Player's Spawn Point
+    /// "L" Lava
     public string[] GetLayout()
     {
         return new[]
         {
-            "         s       ",
+            "               s ",
             "                 ",
             "                 ",
-            "  ##             ",
-            " ##  #^#   +     ",
-            "#####  #######^^ "
+            "        ##             ",
+            "       ##  #^#   +     ",
+            "LLLLLL#####  #######^^ "
         };
     }
 }

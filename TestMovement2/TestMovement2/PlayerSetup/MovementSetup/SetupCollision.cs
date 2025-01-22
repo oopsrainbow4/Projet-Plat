@@ -18,7 +18,7 @@ public partial class MovementMain
     {
         // Tag the floor object for easy identification in collision events
         
-        string[] layoutTags = { "Block", "Spike", "HealingBox"};
+        string[] layoutTags = { "Block", "Spike", "HealingBox", "Lava"};
 
         // Initialize the invincibility timer
         invincibilityTimer = new Timer
@@ -42,6 +42,13 @@ public partial class MovementMain
                         playerHP.Value -= 1; // Reduce HP by 1
                         ActivateInvincibility(); // Start invincibility
                         ApplyKnockback(playerObject, target); // Apply knockback effect
+                    }
+                }
+                else if (target.Tag.ToString() == "Lava")
+                {
+                    if (!isInvincible) // Only lose HP if not invincible
+                    {
+                        playerHP.Value -= 5; // Reduce HP
                     }
                 }
                 else if (target.Tag.ToString() == "HealingBox")

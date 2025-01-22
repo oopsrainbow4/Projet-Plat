@@ -13,12 +13,14 @@ public class MapModule
     private Block blockCreator;
     private Spike spikeCreator;
     private HealingBox healingBoxCreator;
+    private Lava lavaCreator;
 
     public MapModule(PhysicsGame gameInstance)
     {
         blockCreator = new Block(gameInstance); // Initialize the Land module
-        spikeCreator = new Spike(gameInstance);
-        healingBoxCreator = new HealingBox(gameInstance);
+        spikeCreator = new Spike(gameInstance); // Initialize the Spike module
+        healingBoxCreator = new HealingBox(gameInstance); 
+        lavaCreator = new Lava(gameInstance);
     }
 
     public Vector GetSpawnPoint()
@@ -62,6 +64,10 @@ public class MapModule
                 else if (tile == 's') // Player spawn point
                 {
                     spawnPoint = new Vector(posX, posY); // Save the spawn point
+                }
+                else if (tile == 'L') // Lava
+                {
+                    lavaCreator.CreateLava(posX, posY, blockWidth, blockHeight);
                 }
             }
         }
