@@ -24,9 +24,20 @@ public class Main : PhysicsGame
     
     public override void Begin()
     {
+        // Initialize the map layout system
+        mapLayout = new MapLayout();
+        mapModule = new MapModule(this);
+                
+        // Generate the map from the layout
+        string[] layout = mapLayout.GetLayout();
+        mapModule.GenerateMap(layout);
+        
+        // Get the spawn point from the map
+        Vector spawnPoint = mapModule.GetSpawnPoint();
+        
         // Initialize the player
         createPlayer = new CreatePlayer();
-        createPlayer.Setup(this); // Creates the player's PhysicsObject and adds it to the game
+        createPlayer.Setup(this, spawnPoint); // Creates the player's PhysicsObject and adds it to the game
 
         // Initialize movement system with the player's object
         movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
@@ -48,12 +59,8 @@ public class Main : PhysicsGame
         cameraSetup.SetupCamera(); // Attach the camera to the player
         cameraSetup.SetZoom(0.8);  // Optional: Adjust the zoom level
         
-        // Initialize the map layout system
-        mapLayout = new MapLayout();
-        mapModule = new MapModule(this);
-        
-        // Generate the map from the layout
-        string[] layout = mapLayout.GetLayout();
-        mapModule.GenerateMap(layout);
+        // Initialize respawn logic
+        Respawn respawn = new Respawn(createPlayer.GetPlayerObject(), createPlayer.playerHP, spawnPoint);
+        respawn.StartRespawnTimer();
     }
 }

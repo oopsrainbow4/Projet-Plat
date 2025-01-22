@@ -8,15 +8,16 @@ public class MapLayout
     /// "#" Land
     /// "^" Spike
     /// "+" Healing Box
+    /// "s" Player's Spawn Point
     public string[] GetLayout()
     {
         return new[]
         {
-            "                 ",
+            "         s       ",
             "                 ",
             "                 ",
             "  ##             ",
-            " ##  #^#   +      ",
+            " ##  #^#   +     ",
             "#####  #######^^ "
         };
     }

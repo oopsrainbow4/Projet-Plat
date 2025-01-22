@@ -19,6 +19,7 @@
       <Content Include="Content\BackgroundImages\Background.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\PlayerImages\stickman.png" />
     </ItemGroup>
 
 </Project>

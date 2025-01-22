@@ -8,6 +8,8 @@ namespace TestMovement2.MapLayoutFolder;
 /// </summary>
 public class MapModule
 {
+    private Vector spawnPoint; // Store the spawn point coordinates
+    
     private Block blockCreator;
     private Spike spikeCreator;
     private HealingBox healingBoxCreator;
@@ -17,6 +19,11 @@ public class MapModule
         blockCreator = new Block(gameInstance); // Initialize the Land module
         spikeCreator = new Spike(gameInstance);
         healingBoxCreator = new HealingBox(gameInstance);
+    }
+
+    public Vector GetSpawnPoint()
+    {
+        return spawnPoint;
     }
     
     /// <summary>
@@ -51,6 +58,10 @@ public class MapModule
                 else if (tile == '+') // Healing Box
                 {
                     healingBoxCreator.CreateHealingBox(posX, posY, blockWidth, blockHeight);
+                }
+                else if (tile == 's') // Player spawn point
+                {
+                    spawnPoint = new Vector(posX, posY); // Save the spawn point
                 }
             }
         }

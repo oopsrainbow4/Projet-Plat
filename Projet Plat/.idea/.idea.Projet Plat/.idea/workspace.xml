@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="" />
+    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="8d296318-e99e-4d14-91b4-1368a73b31c1" name="Changes by gr301851" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +84,9 @@
       <workItem from="1736343468515" duration="1054000" />
       <workItem from="1736509254148" duration="295000" />
       <workItem from="1736702716074" duration="603000" />
+      <workItem from="1736959239986" duration="2821000" />
+      <workItem from="1737529201840" duration="341000" />
+      <workItem from="1737535303233" duration="341000" />
     </task>
     <servers />
   </component>
