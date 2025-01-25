@@ -8,13 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/Respawn.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMovement3/TestMovement3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/TestMovement3.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +89,7 @@
       <workItem from="1736958042811" duration="1609000" />
       <workItem from="1737127529398" duration="43000" />
       <workItem from="1737540138737" duration="235000" />
+      <workItem from="1737542500936" duration="763000" />
     </task>
     <servers />
   </component>
