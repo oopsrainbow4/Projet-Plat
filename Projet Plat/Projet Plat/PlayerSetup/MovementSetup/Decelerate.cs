@@ -23,7 +23,7 @@ public partial class MovementMain
         if (player.Velocity.X > 0)
         {
             // Decrease speed to the right
-            player.Velocity -= new Vector(ACCELERATION_RATE / 2, 0);
+            player.Velocity -= new Vector(DECELERATION_RATE, 0);
             
             // If velocity goes negative, set it to zero
             if (player.Velocity.X < 0) 
@@ -33,7 +33,7 @@ public partial class MovementMain
         else if (player.Velocity.X < 0)
         {
             // Decrease speed to the left
-            player.Velocity += new Vector(ACCELERATION_RATE / 2, 0);
+            player.Velocity += new Vector(DECELERATION_RATE, 0);
             
             // If velocity goes positive, set it to zero
             if (player.Velocity.X > 0) 

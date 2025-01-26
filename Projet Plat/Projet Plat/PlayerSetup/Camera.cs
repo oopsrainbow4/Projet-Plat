@@ -58,9 +58,11 @@ public class CameraSetup
         Vector currentPosition = game.Camera.Position;
 
         // Interpolate between current position and target position
-        double smoothingFactor = 0.1; // Adjust this value for smoother or quicker movement
-        Vector newPosition = currentPosition + (targetPosition - currentPosition) * smoothingFactor;
-        
-        game.Camera.Position = newPosition;
+        if ((targetPosition - currentPosition).Magnitude > 0.1)
+        { 
+            double smoothingFactor = 0.1; // Adjust this value for smoother or quicker movement
+            Vector newPosition = currentPosition + (targetPosition - currentPosition) * smoothingFactor;
+            game.Camera.Position = newPosition;   
+        }
     }
 }

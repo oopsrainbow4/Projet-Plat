@@ -8,11 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/EnemyImages/Red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemyStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/ListOfEnemies/BasicEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/ListOfEnemies/BasicEnemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/HealingBox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Lava.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Spike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/Camera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/MovementMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/MovementMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/MovementSetup/Decelerate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/MovementSetup/Decelerate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/Respawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/LayoutDesign/HealingBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/LayoutDesign/HealingBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapLayout.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Camera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/Deceleration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/Deceleration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Respawn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +109,7 @@
       <workItem from="1737542500936" duration="763000" />
       <workItem from="1737815076665" duration="395000" />
       <workItem from="1737870077343" duration="146000" />
+      <workItem from="1737901788040" duration="719000" />
     </task>
     <servers />
   </component>

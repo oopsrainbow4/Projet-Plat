@@ -19,7 +19,7 @@ public class HealingBox
     /// </summary>
     public void CreateHealingBox(double x, double y, double width, double height)
     {
-        PhysicsObject healingBox = PhysicsObject.CreateStaticObject(width / 2, height / 2);
+        PhysicsObject healingBox = PhysicsObject.CreateStaticObject(width, height);
         healingBox.Shape = Shape.Rectangle;
         healingBox.Color = Color.LightGreen;
         healingBox.X = x;

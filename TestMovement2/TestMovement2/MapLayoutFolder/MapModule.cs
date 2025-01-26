@@ -59,7 +59,7 @@ public class MapModule
                 }
                 else if (tile == '+') // Healing Box
                 {
-                    healingBoxCreator.CreateHealingBox(posX, posY, blockWidth, blockHeight);
+                    healingBoxCreator.CreateHealingBox(posX, posY, blockWidth / 2, blockHeight / 2);
                 }
                 else if (tile == 's') // Player spawn point
                 {
