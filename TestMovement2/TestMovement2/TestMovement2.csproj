@@ -32,10 +32,10 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\BackgroundImages\Background2.png" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Content\EnemyImages\" />
+      <None Remove="Content\EnemyImages\Red.png" />
+      <Content Include="Content\EnemyImages\Red.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

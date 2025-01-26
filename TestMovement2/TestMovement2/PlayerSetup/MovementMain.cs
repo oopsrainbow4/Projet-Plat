@@ -17,6 +17,7 @@ public partial class MovementMain
     private readonly double MAX_SPEED = 1000;       // Maximum horizontal speed
     private readonly double ACCELERATION_RATE = 20; // Speed increment when moving
     private readonly double JUMP_HEIGHT = 500.0;    // Vertical jump height
+    private const double DECELERATION_RATE = 10;    // Decelerate speed when stop moving
     
     // States to track player movement and jumping
     private bool isDoubleJumpingAllowed; // Whether the player can perform a double jump

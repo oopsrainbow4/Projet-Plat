@@ -13,6 +13,8 @@ public class Respawn
     private readonly Vector spawnPoint;
     private Timer respawnTimer;
 
+    private const int MAX_HP = 3;
+
     public Respawn(PhysicsObject player, IntMeter playerHP, Vector spawnPoint)
     {
         this.player = player;
@@ -40,9 +42,15 @@ public class Respawn
     {
         player.Position = spawnPoint; // Reset position to spawn point
         player.Velocity = Vector.Zero; // Stop movement
-        playerHP.Value = 3; // Restore HP
+        playerHP.Value = MAX_HP; // Restore HP
     }
 
+    /// <summary>
+    /// No longer need to monitor respawn conditions, such as during game over, level transitions, or cutscenes.
+    /// Temporarily pause respawn monitoring, such as during invincibility or when the game is paused.
+    ///
+    /// I leave there just in case if I need it or not.
+    /// </summary>
     public void StopRespawnTimer()
     {
         if (respawnTimer != null)

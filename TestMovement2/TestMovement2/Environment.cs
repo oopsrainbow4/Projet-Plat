@@ -87,8 +87,9 @@ public class Environment
         // Create a timer with a short interval to frequently update the background.
         backgroundUpdateTimer = new Timer
         {
-            Interval = 0.001 // Update every 1ms for smooth background movement.
+            Interval = 0.001
         };
+            
         // Attach the UpdateBackground method to the timer's Timeout event.
         backgroundUpdateTimer.Timeout += UpdateBackground;
         backgroundUpdateTimer.Start(); // Start the timer.
