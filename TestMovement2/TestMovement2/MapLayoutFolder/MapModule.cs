@@ -1,5 +1,4 @@
 using Jypeli;
-using TestMovement2.MapLayoutFolder.LayoutDesign;
 
 namespace TestMovement2.MapLayoutFolder;
 
@@ -8,21 +7,19 @@ namespace TestMovement2.MapLayoutFolder;
 /// </summary>
 public class MapModule
 {
+    private readonly PhysicsGame game;
+    private readonly CreateBlock createBlock;
     private Vector spawnPoint; // Store the spawn point coordinates
-    
-    private Block blockCreator;
-    private Spike spikeCreator;
-    private HealingBox healingBoxCreator;
-    private Lava lavaCreator;
 
     public MapModule(PhysicsGame gameInstance)
     {
-        blockCreator = new Block(gameInstance); // Initialize the Land module
-        spikeCreator = new Spike(gameInstance); // Initialize the Spike module
-        healingBoxCreator = new HealingBox(gameInstance); 
-        lavaCreator = new Lava(gameInstance);
+        game = gameInstance;
+        createBlock = new CreateBlock(gameInstance); // Use CreateBlock for all object types
     }
 
+    /// <summary>
+    /// Get the player spawn point.
+    /// </summary>
     public Vector GetSpawnPoint()
     {
         return spawnPoint;
@@ -40,7 +37,6 @@ public class MapModule
         for (int y = 0; y < layout.Length; y++)
         {
             string line = layout[y];
-
             for (int x = 0; x < line.Length; x++)
             {
                 char tile = line[x];
@@ -48,26 +44,24 @@ public class MapModule
                 // Calculate block position
                 double posX = x * blockWidth - (layout[0].Length / 1.99) * blockWidth;
                 double posY = -(y * blockHeight - (layout.Length / 1.99) * blockHeight);
-                
-                if (tile == '#') //Land
+
+                switch (tile)
                 {
-                    blockCreator.CreateLandBlock(posX, posY, blockWidth, blockHeight);
-                }
-                else if (tile == '^') // Spike
-                {
-                    spikeCreator.CreateSpike(posX, posY, blockWidth, blockHeight);
-                }
-                else if (tile == '+') // Healing Box
-                {
-                    healingBoxCreator.CreateHealingBox(posX, posY, blockWidth / 2, blockHeight / 2);
-                }
-                else if (tile == 's') // Player spawn point
-                {
-                    spawnPoint = new Vector(posX, posY); // Save the spawn point
-                }
-                else if (tile == 'L') // Lava
-                {
-                    lavaCreator.CreateLava(posX, posY, blockWidth, blockHeight);
+                    case '#': // Land
+                        createBlock.CreateBlocks(posX, posY, BlockModule.BlockType.Land);
+                        break;
+                    case '^': // Spike
+                        createBlock.CreateBlocks(posX, posY, BlockModule.BlockType.Spike);
+                        break;
+                    case '+': // Healing Box
+                        createBlock.CreateBlocks(posX, posY, BlockModule.BlockType.HealingBox);
+                        break;
+                    case 'L': // Lava
+                        createBlock.CreateBlocks(posX, posY, BlockModule.BlockType.Lava);
+                        break;
+                    case 's': // Spawn point
+                        spawnPoint = new Vector(posX, posY);
+                        break;
                 }
             }
         }

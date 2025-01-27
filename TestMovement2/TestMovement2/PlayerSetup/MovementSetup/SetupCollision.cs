@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using Jypeli;
+using TestMovement2.MapLayoutFolder;
 
 namespace TestMovement2.PlayerSetup;
 
@@ -16,18 +18,17 @@ public partial class MovementMain
     /// <param name="playerHP"></param>
     public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP)
     {
-        // Tag the floor object for easy identification in collision events
-        
-        string[] layoutTags = { "Block", "Spike", "HealingBox", "Lava"};
+        // Centralized tags for collision objects
+        string[] layoutTags = BlockModule.BlockInfo.Values.Select(info => info.Tag).ToArray();
 
         // Initialize the invincibility timer
         invincibilityTimer = new Timer
         {
             Interval = 2.0 // 2 seconds of invincibility
         };
-        invincibilityTimer.Timeout += () => { isInvincible = false; }; // Turn off invincibility
+        invincibilityTimer.Timeout += () => {isInvincible = false;}; // Turn off invincibility
 
-        // Detect when the player collides with the floor
+        // Detect when the player collides with objects.
         playerObject.Collided += (_, target) =>
         {
             if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
@@ -35,26 +36,17 @@ public partial class MovementMain
                 isOnGround = true;
                 isDoubleJumpingAllowed = true;
 
-                if (target.Tag.ToString() == "Spike")
+                switch (target.Tag.ToString())
                 {
-                    if (!isInvincible) // Only lose HP if not invincible
-                    {
-                        playerHP.Value -= 1; // Reduce HP by 1
-                        ActivateInvincibility(); // Start invincibility
-                        ApplyKnockback(playerObject, target); // Apply knockback effect
-                    }
-                }
-                else if (target.Tag.ToString() == "Lava")
-                {
-                    if (!isInvincible) // Only lose HP if not invincible
-                    {
-                        playerHP.Value -= 5; // Reduce HP
-                    }
-                }
-                else if (target.Tag.ToString() == "HealingBox")
-                {
-                    playerHP.Value += 1; // Heal the player by 1 HP
-                    // Optional: Add visual or sound feedback
+                    case "Spike":
+                        HandleSpikeCollision(playerObject, playerHP, target);
+                        break;
+                    case "Lava":
+                        if (!isInvincible) playerHP.Value -= 5;
+                        break;
+                    case "HealingBox":
+                        playerHP.Value += 1;
+                        break;
                 }
             }
         };
@@ -74,6 +66,17 @@ public partial class MovementMain
         groundCheckTimer.Start(); // Start the timer
     }
 
+    // Handles collision with spikes
+    private void HandleSpikeCollision(PhysicsObject playerObject, IntMeter playerHP, IPhysicsObject spike)
+    {
+        if (!isInvincible)
+        {
+            playerHP.Value -= 1; // Reduce HP
+            ActivateInvincibility(); // Start invincibility
+            ApplyKnockback(playerObject, spike); // Apply knockback effect
+        }
+    }
+    
     // Activates invincibility for the player
     private void ActivateInvincibility()
     {

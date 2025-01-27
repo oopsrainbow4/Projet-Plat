@@ -37,9 +37,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\MapLayoutImages\White.png" />
-      <Content Include="Content\MapLayoutImages\Spike.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\MapLayoutImages\Green.png" />
       <Content Include="Content\MapLayoutImages\HealingBox.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -50,6 +47,10 @@
       </Content>
       <None Remove="Content\MapLayoutImages\Lava.png" />
       <Content Include="Content\MapLayoutImages\Lava.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\MapLayoutImages\Spike.png" />
+      <Content Include="Content\MapLayoutImages\Spike.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
