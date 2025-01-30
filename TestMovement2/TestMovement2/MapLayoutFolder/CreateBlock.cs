@@ -8,6 +8,7 @@ namespace TestMovement2.MapLayoutFolder;
 public class CreateBlock
 {
     private readonly PhysicsGame game;
+
     public CreateBlock(PhysicsGame gameInstance)
     {
         game = gameInstance;
@@ -16,25 +17,34 @@ public class CreateBlock
     /// <summary>
     /// Creates a block of the specified type at the given position.
     /// </summary>
-    /// <param name="x">The x-coordinate.</param>
-    /// <param name="y">The y-coordinate.</param>
-    /// <param name="blockType">The type of block to create.</param>
-    public void CreateBlocks(double x, double y, BlockModule.BlockType blockType)
+    public void CreateBlocks(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
     {
-        var (tag, imagePath, shape, width, height) = BlockModule.BlockInfo[blockType];
+        var (tag, _, shape, width, height) = BlockModule.BlockInfo[blockType];
 
-        // Create and configure the block
         PhysicsObject block = PhysicsObject.CreateStaticObject(width, height);
         block.Shape = shape;
         block.X = x;
         block.Y = y;
         block.Tag = tag;
-
-        if (!string.IsNullOrEmpty(imagePath))
-        {
-            block.Image = Game.LoadImage(imagePath);
-        }
+        block.Image = cachedImage;
 
         game.Add(block);
+    }
+
+    /// <summary>
+    /// Creates a block object without adding it to the game (for batching).
+    /// </summary>
+    public PhysicsObject CreateBlockObject(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
+    {
+        var (tag, _, shape, width, height) = BlockModule.BlockInfo[blockType];
+
+        PhysicsObject block = PhysicsObject.CreateStaticObject(width, height);
+        block.Shape = shape;
+        block.X = x;
+        block.Y = y;
+        block.Tag = tag;
+        block.Image = cachedImage;
+
+        return block;
     }
 }
