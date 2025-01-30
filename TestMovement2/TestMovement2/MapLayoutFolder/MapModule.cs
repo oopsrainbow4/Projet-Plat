@@ -70,7 +70,9 @@ public class MapModule
 
                 if (blockType.HasValue)
                 {
-                    if (blockType == BlockModule.BlockType.Land) 
+                    if (blockType == BlockModule.BlockType.Land || 
+                        blockType == BlockModule.BlockType.Spike || 
+                        blockType == BlockModule.BlockType.Lava) 
                     {
                         // Optimize by batching static blocks
                         var block = createBlock.CreateBlockObject(posX, posY, blockType.Value, 
