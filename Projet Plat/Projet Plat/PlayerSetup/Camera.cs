@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Numerics;
 using Jypeli;
-using Jypeli.Assets;
-using Jypeli.Controls;
-using Jypeli.Widgets;
 using Vector = Jypeli.Vector;
 
 namespace Projet_Plat.PlayerSetup;
