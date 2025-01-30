@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="" />
+    <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +100,8 @@
       <workItem from="1738162323103" duration="163000" />
       <workItem from="1738167597543" duration="344000" />
       <workItem from="1738231899705" duration="917000" />
+      <workItem from="1738233066579" duration="100000" />
+      <workItem from="1738233267437" duration="42000" />
     </task>
     <servers />
   </component>
