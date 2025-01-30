@@ -20,6 +20,22 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\PlayerImages\stickman.png" />
+      <None Remove="Content\MapLayoutImages\Spike.png" />
+      <Content Include="Content\MapLayoutImages\Spike.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\MapLayoutImages\Lava.png" />
+      <Content Include="Content\MapLayoutImages\Lava.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\MapLayoutImages\HealingBox.png" />
+      <Content Include="Content\MapLayoutImages\HealingBox.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\MapLayoutImages\Block.png" />
+      <Content Include="Content\MapLayoutImages\Block.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
