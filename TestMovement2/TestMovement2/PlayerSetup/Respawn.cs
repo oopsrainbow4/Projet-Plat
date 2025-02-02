@@ -13,7 +13,7 @@ public class Respawn
     private readonly Vector spawnPoint;
     private Timer respawnTimer;
 
-    private const int MAX_HP = 3;
+    private const int MAX_HP = 5;
 
     public Respawn(PhysicsObject player, IntMeter playerHP, Vector spawnPoint)
     {

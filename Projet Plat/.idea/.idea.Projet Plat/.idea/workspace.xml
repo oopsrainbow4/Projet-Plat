@@ -7,26 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/HealingBox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Lava.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/MapLayoutImages/Spike.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/PlayerSetup/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/PlayerSetup/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/PlayerSetup/MovementMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/PlayerSetup/MovementMain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/PlayerSetup/MovementSetup/Decelerate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/PlayerSetup/MovementSetup/Decelerate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet Plat/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/PlayerSetup/Respawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/LayoutDesign/HealingBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/LayoutDesign/HealingBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement3/TestMovement3/MapLayoutFolder/MapLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/TestMovement3/MapLayoutFolder/MapLayout.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/MovementMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/MovementMain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/MovementSetup/Deceleration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/MovementSetup/Deceleration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/TestMovement3/PlayerSetup/Respawn.cs" afterDir="false" />
-    </list>
+    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="" />
     <list id="8d296318-e99e-4d14-91b4-1368a73b31c1" name="Changes by gr301851" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +88,7 @@
       <workItem from="1737552132581" duration="76000" />
       <workItem from="1737613623750" duration="1947000" />
       <workItem from="1737902391914" duration="119000" />
+      <workItem from="1738232835307" duration="633000" />
     </task>
     <servers />
   </component>
