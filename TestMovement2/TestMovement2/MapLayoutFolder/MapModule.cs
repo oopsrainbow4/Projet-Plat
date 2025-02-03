@@ -72,7 +72,6 @@ public class MapModule
                 }
                 else if (tile == 'E') 
                 {
-                    Console.WriteLine($"Spawning enemy at ({posX}, {posY})");
                     enemyPositions.Add(new Vector(posX, posY)); // Store instead of spawning immediately
                 }
                 else
