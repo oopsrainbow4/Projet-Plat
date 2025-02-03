@@ -10,6 +10,8 @@ public class CreatePlayer
     private PhysicsObject player;
     public IntMeter playerHP;
 
+    public const int MAX_HP = 5;
+
     public void Setup(Game game, Vector spawnPosition)
     {
         // Create the player (a block with width and height)
@@ -27,7 +29,7 @@ public class CreatePlayer
         game.Add(player);
 
         // Initialize player's HP
-        playerHP = new IntMeter(5, 0, 5); // 3 max HP, minimum 0
+        playerHP = new IntMeter(MAX_HP, 0, MAX_HP); // 5 max HP, minimum 0
 
         // Add HP display (GUI)
         Label hpLabel = new Label

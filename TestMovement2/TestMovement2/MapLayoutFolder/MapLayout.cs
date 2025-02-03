@@ -10,6 +10,7 @@ public class MapLayout
     /// "+" Healing Box
     /// "s" Player's Spawn Point
     /// "L" Lava
+    /// "E" Basic Enemy
     public string[] GetLayout()
     {
         return
@@ -17,7 +18,7 @@ public class MapLayout
             "               s ",
             "                 ",
             "                 ",
-            "        ##              E",
+            "        ##              E       E",
             "    L   ##  #^#   +     ",
             "################################################################################################## "
         ];

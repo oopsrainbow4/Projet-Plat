@@ -13,8 +13,6 @@ public class Respawn
     private readonly Vector spawnPoint;
     private Timer respawnTimer;
 
-    private const int MAX_HP = 5;
-
     public Respawn(PhysicsObject player, IntMeter playerHP, Vector spawnPoint)
     {
         this.player = player;
@@ -42,7 +40,7 @@ public class Respawn
     {
         player.Position = spawnPoint; // Reset position to spawn point
         player.Velocity = Vector.Zero; // Stop movement
-        playerHP.Value = MAX_HP; // Restore HP
+        playerHP.Value = CreatePlayer.MAX_HP; // Restore HP
     }
 
     /// <summary>
