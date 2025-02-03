@@ -1,7 +1,7 @@
 using System;
 using Jypeli;
 
-namespace TestMovement2.EnemyModuleFolder;
+namespace TestMovement3.EnemyModuleFolder;
 
 /// <summary>
 /// Represents a basic enemy that moves left and right, detects the player, and attacks.
@@ -36,7 +36,7 @@ public class BasicEnemy : PhysicsObject
         this.player = player;
         Damage = data.Damage;
         
-        Image = Game.LoadImage("EnemyImages/God.png");
+        Image = Game.LoadImage("EnemyImages/BasicEnemy.png");
         Tag = "Enemy"; // Assign enemy tag
         IgnoresGravity = false; // Enemy is affected by gravity
         

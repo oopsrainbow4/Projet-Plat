@@ -54,6 +54,10 @@
       <Content Include="Content\EnemyImages\BasicEnemy.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\EnemyImages\God.png" />
+      <Content Include="Content\EnemyImages\God.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
