@@ -1,5 +1,7 @@
+using System;
 using Jypeli;
 using System.Collections.Generic;
+using Projet_Plat.EnemyModuleFolder;
 
 namespace Projet_Plat.MapLayoutFolder;
 
@@ -12,7 +14,8 @@ public class MapModule
     private readonly CreateBlock createBlock;
     private Vector spawnPoint; // Store the spawn point coordinates
     private readonly Dictionary<BlockModule.BlockType, Image> cachedImages; // Cache images
-
+    private List<Vector> enemyPositions = new List<Vector>(); // Store enemy positions
+    
     public MapModule(PhysicsGame gameInstance)
     {
         game = gameInstance;
@@ -28,6 +31,11 @@ public class MapModule
                 cachedImages[blockType] = Game.LoadImage(imagePath);
             }
         }
+    }
+
+    public List<Vector> GetEnemyPositions()
+    {
+        return enemyPositions;
     }
 
     /// <summary>
@@ -55,38 +63,45 @@ public class MapModule
             for (int x = 0; x < line.Length; x++)
             {
                 char tile = line[x];
-                double posX = x * blockWidth - (layout[0].Length / 1.99) * blockWidth;
-                double posY = -(y * blockHeight - (layout.Length / 1.99) * blockHeight);
-
-                BlockModule.BlockType? blockType = tile switch
-                {
-                    '#' => BlockModule.BlockType.Land,
-                    '^' => BlockModule.BlockType.Spike,
-                    '+' => BlockModule.BlockType.HealingBox,
-                    'L' => BlockModule.BlockType.Lava,
-                    's' => null, // Player spawn
-                    _ => null
-                };
-
-                if (blockType.HasValue)
-                {
-                    if (blockType == BlockModule.BlockType.Land || 
-                        blockType == BlockModule.BlockType.Spike || 
-                        blockType == BlockModule.BlockType.Lava) 
-                    {
-                        // Optimize by batching static blocks
-                        var block = createBlock.CreateBlockObject(posX, posY, blockType.Value, 
-                            cachedImages[blockType.Value]);
-                        staticBlocks.Add(block);
-                    }
-                    else
-                    {
-                        createBlock.CreateBlocks(posX, posY, blockType.Value, cachedImages[blockType.Value]);
-                    }
-                }
-                else if (tile == 's')
+                double posX = x * blockWidth - (layout[0].Length * blockWidth / 2);
+                double posY = -(y * blockHeight - (layout.Length * blockHeight / 2));
+                
+                if (tile == 's')
                 {
                     spawnPoint = new Vector(posX, posY);
+                }
+                else if (tile == 'E') 
+                {
+                    enemyPositions.Add(new Vector(posX, posY)); // Store instead of spawning immediately
+                }
+                else
+                {
+                   BlockModule.BlockType? blockType = tile switch
+                   {
+                       '#' => BlockModule.BlockType.Land,
+                       '^' => BlockModule.BlockType.Spike,
+                       '+' => BlockModule.BlockType.HealingBox,
+                       'L' => BlockModule.BlockType.Lava,
+                       's' => null, // Player spawn
+                       _ => null 
+                   }; 
+                   
+                   if (blockType.HasValue)
+                   { 
+                       if (blockType == BlockModule.BlockType.Land || 
+                         blockType == BlockModule.BlockType.Spike || 
+                         blockType == BlockModule.BlockType.Lava) 
+                        {
+                            // Optimize by batching static blocks
+                            var block = createBlock.CreateBlockObject(posX, posY, blockType.Value, 
+                                cachedImages[blockType.Value]);
+                            staticBlocks.Add(block);
+                        }
+                        else
+                        {
+                            createBlock.CreateBlocks(posX, posY, blockType.Value, cachedImages[blockType.Value]); 
+                        }
+                   } 
                 }
             }
         }

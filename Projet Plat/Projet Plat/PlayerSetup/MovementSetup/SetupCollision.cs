@@ -1,14 +1,15 @@
 using System;
 using System.Linq;
 using Jypeli;
+using Projet_Plat.EnemyModuleFolder;
 using Projet_Plat.MapLayoutFolder;
 
 namespace Projet_Plat.PlayerSetup;
 
 public partial class MovementMain
 {
-    // Add to class-level variables
-    private bool isInvincible; // Tracks if the player is invincible
+    // Tracks whether the player is temporarily invincible after taking damage
+    private bool isInvincible;
     private Timer invincibilityTimer;  // Timer to handle invincibility duration
     
     /// <summary>
@@ -31,22 +32,31 @@ public partial class MovementMain
         // Detect when the player collides with objects.
         playerObject.Collided += (_, target) =>
         {
-            if (target.Tag != null && Array.Exists(layoutTags, tag => tag.Equals(target.Tag.ToString())))
+            if (target.Tag != null) 
             {
-                isOnGround = true;
-                isDoubleJumpingAllowed = true;
+                string targetTag = target.Tag.ToString();
 
-                switch (target.Tag.ToString())
-                {
-                    case "Spike":
-                        HandleSpikeCollision(playerObject, playerHP, target);
-                        break;
-                    case "Lava":
-                        if (!isInvincible) playerHP.Value -= 5;
-                        break;
-                    case "HealingBox":
-                        playerHP.Value += 1;
-                        break;
+                if (Array.Exists(layoutTags, tag => tag.Equals(targetTag)))
+                { 
+                    isOnGround = true;
+                    isDoubleJumpingAllowed = true;
+                   
+                    switch (target.Tag.ToString())
+                    {
+                        case "Spike":
+                            HandleSpikeCollision(playerObject, playerHP, target);
+                            break;
+                        case "Lava":
+                            if (!isInvincible) playerHP.Value -= 10;
+                            break;
+                        case "HealingBox":
+                            playerHP.Value += 1;
+                            break;
+                    } 
+                }
+                else if (targetTag == "Enemy") // Handle enemy collision
+                { 
+                    HandleEnemyCollision(playerObject, playerHP, target as BasicEnemy);
                 }
             }
         };
@@ -66,25 +76,49 @@ public partial class MovementMain
         groundCheckTimer.Start(); // Start the timer
     }
 
-    // Handles collision with spikes
+    /// <summary>
+    /// Handles collision with spikes by reducing health and applying knockback.
+    /// </summary>
     private void HandleSpikeCollision(PhysicsObject playerObject, IntMeter playerHP, IPhysicsObject spike)
     {
         if (!isInvincible)
         {
-            playerHP.Value -= 1; // Reduce HP
-            ActivateInvincibility(); // Start invincibility
-            ApplyKnockback(playerObject, spike); // Apply knockback effect
+            playerHP.Value -= 1; // Reduce HP by 1
+            ActivateInvincibility(); // Start invincibility timer to prevent instant damage
+            ApplyKnockback(playerObject, spike); // Push the player away from the spike
+        }
+    }
+
+    private void HandleEnemyCollision(PhysicsObject playerObject, IntMeter playerHP, BasicEnemy enemy)
+    {
+        if (enemy != null)
+        {
+            if (playerObject.Bottom >= enemy.Top - 5) // Check if player is landing on enemy
+            {
+                enemy.TakeDamage(1); 
+                playerObject.Velocity = new Vector(playerObject.Velocity.X, 500); // Bounce player upwards
+            }
+            else if (!isInvincible)
+            {
+                playerHP.Value -= enemy.Damage; // Reduce player HP
+                ActivateInvincibility();
+                ApplyKnockback(playerObject, enemy);
+            }
         }
     }
     
-    // Activates invincibility for the player
+    /// <summary>
+    /// Activates temporary invincibility after taking damage.
+    /// </summary>
     private void ActivateInvincibility()
     {
-        isInvincible = true;  // Set invincible status
-        invincibilityTimer.Start(); // Start the timer
+        isInvincible = true;  // Player becomes invincible
+        invincibilityTimer.Start(); // Start the timer to track duration
     }
     
-    // Applies knockback to the player when they touch a spike
+    /// <summary>
+    /// Applies a knockback effect to the player when colliding with damaging objects.
+    /// </summary>
     private void ApplyKnockback(PhysicsObject playerCharacter, IPhysicsObject spike)
     {
         // Determine the direction of knockback based on relative positions

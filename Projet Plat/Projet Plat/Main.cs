@@ -1,5 +1,5 @@
 using Jypeli;
-
+using Projet_Plat.EnemyModuleFolder;
 using Projet_Plat.PlayerSetup;
 using Projet_Plat.MapLayoutFolder;
 
@@ -38,7 +38,10 @@ public class Main : PhysicsGame
         // Initialize the player
         createPlayer = new CreatePlayer();
         createPlayer.Setup(this, spawnPoint); // Creates the player's PhysicsObject and adds it to the game
-
+        
+        // Spawn enemies after the player exists
+        EnemySpawner.SpawnEnemiesAfterPlayer(mapModule);
+        
         // Initialize movement system with the player's object
         movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
 
