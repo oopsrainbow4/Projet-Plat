@@ -35,12 +35,21 @@ public class BasicEnemy : PhysicsObject
         startX = x;
         this.player = player;
         Damage = data.Damage;
-        
+
         Image = Game.LoadImage("EnemyImages/BasicEnemy.png");
         Tag = "Enemy"; // Assign enemy tag
         IgnoresGravity = false; // Enemy is affected by gravity
-        
+
         Timer.SingleShot(0.1, Patrol); // Start patrol behavior
+    }
+    
+    /// <summary>
+    /// Prevents the enemy from rotating by forcing Angle to stay at 0.
+    /// </summary>
+    public override void Update(Time time)
+    {
+        base.Update(time);
+        Angle = Angle.Zero; // Keep enemy upright
     }
 
     /// <summary>

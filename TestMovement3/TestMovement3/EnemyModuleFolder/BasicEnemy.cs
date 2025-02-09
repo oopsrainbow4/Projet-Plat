@@ -42,6 +42,15 @@ public class BasicEnemy : PhysicsObject
         
         Timer.SingleShot(0.1, Patrol); // Start patrol behavior
     }
+    
+    /// <summary>
+    /// Prevents the enemy from rotating by forcing Angle to stay at 0.
+    /// </summary>
+    public override void Update(Time time)
+    {
+        base.Update(time);
+        Angle = Angle.Zero; // Keep enemy upright
+    }
 
     /// <summary>
     /// Controls the enemy's behavior based on the player's position.
