@@ -66,34 +66,7 @@ public class BasicEnemy : PhysicsObject
             MovePatrol(); // Otherwise, continue patrolling
         }
         
-        CheckForObstacles(); // Check if the enemy needs to jump
-        
         Timer.SingleShot(0.1, Patrol); // Repeat patrol logic periodically
-    }
-
-    /// <summary>
-    /// Checks if the enemy is facing an obstacle and jumps if necessary.
-    /// </summary>
-    private void CheckForObstacles()
-    {
-        Vector direction = new Vector(movingRight ? 1 : -1, 0);
-        PhysicsObject obstacle = PhysicsObject.FindHit(this, direction, 10);
-
-        if (obstacle != null && obstacle.Tag == "Block") // Check if the obstacle is a block
-        {
-            if (IsGrounded) // Only jump if the enemy is on the ground
-            {
-                Jump();
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Makes the enemy jump over small obstacles.
-    /// </summary>
-    private void Jump()
-    {
-        Velocity = new Vector(Velocity.X, 300); // Apply upward velocity
     }
 
     /// <summary>
