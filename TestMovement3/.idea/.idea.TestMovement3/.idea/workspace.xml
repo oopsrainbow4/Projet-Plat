@@ -8,7 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/EnemyModuleFolder/BasicEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/EnemyModuleFolder/BasicEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/Environment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/Environment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/MapLayoutFolder/MapModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/CreatePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/Projet Plat/PlayerSetup/CreatePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/EnemyModuleFolder/BasicEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/EnemyModuleFolder/BasicEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/Environment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/Environment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/CreatePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/CreatePlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +114,7 @@
       <workItem from="1738233267437" duration="42000" />
       <workItem from="1738588422721" duration="2701000" />
       <workItem from="1739113764449" duration="254000" />
+      <workItem from="1739448563823" duration="346000" />
     </task>
     <servers />
   </component>

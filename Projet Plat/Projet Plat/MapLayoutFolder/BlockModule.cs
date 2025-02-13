@@ -8,8 +8,8 @@ namespace Projet_Plat.MapLayoutFolder;
 /// </summary>
 public class BlockModule
 {
-    private static readonly double blockWidth = 50;
-    private static readonly double blockHeight = 50;
+    private static readonly double blockWidth = 64;
+    private static readonly double blockHeight = 64;
     public enum BlockType
     {
         Land,

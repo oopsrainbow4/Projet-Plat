@@ -52,8 +52,8 @@ public class MapModule
     /// <param name="layout">A string array representing the map layout.</param>
     public void GenerateMap(string[] layout)
     {
-        double blockWidth = 50;
-        double blockHeight = 50;
+        double blockWidth = 64;
+        double blockHeight = 64;
 
         List<PhysicsObject> staticBlocks = new List<PhysicsObject>(); // Batch static blocks
 

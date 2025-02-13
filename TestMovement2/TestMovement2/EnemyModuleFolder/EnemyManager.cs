@@ -10,7 +10,7 @@ public static class EnemyManager
     // Dictionary to store enemy data by name/type
     public static readonly Dictionary<string, EnemyData> EnemyStats = new()
     {
-        {"BasicEnemy", new EnemyData{ HP = 2, Speed = 100, Damage = 1, PatrolRange = 1000}},
+        {"BasicEnemy", new EnemyData{ HP = 2, Speed = 100, Damage = 1, PatrolRange = 300}},
         {"FastEnemy", new EnemyData { HP = 1, Speed = 200, Damage = 1, PatrolRange = 400 }},
         {"TankEnemy", new EnemyData { HP = 5, Speed = 50, Damage = 2, PatrolRange = 250 }}
     };

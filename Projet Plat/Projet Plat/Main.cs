@@ -60,7 +60,7 @@ public class Main : PhysicsGame
         // Initialize the camera setup
         cameraSetup = new CameraSetup(createPlayer.GetPlayerObject(), this);
         cameraSetup.SetupCamera(); // Attach the camera to the player
-        cameraSetup.SetZoom(0.8);  // Optional: Adjust the zoom level
+        cameraSetup.SetZoom(0.5);  // Optional: Adjust the zoom level
         
         // Initialize respawn logic
         Respawn respawn = new Respawn(createPlayer.GetPlayerObject(), createPlayer.playerHP, spawnPoint);
