@@ -50,7 +50,22 @@ public partial class MovementMain
                             if (!isInvincible) playerHP.Value -= 10;
                             break;
                         case "HealingBox":
-                            playerHP.Value += 1;
+                            if (target is PhysicsObject healingBox)
+                            {
+                                playerHP.Value += 1;
+                                
+                                // Save original position
+                                Vector originalPosition = healingBox.Position;
+                                
+                                // Move it off-screen
+                                healingBox.Position = new Vector(-9999, -9999);
+
+                                // Restore after 3 seconds
+                                Timer.SingleShot(3.0, () =>
+                                {
+                                    healingBox.Position = originalPosition; // Bring it back
+                                });
+                            }
                             break;
                     } 
                 }
