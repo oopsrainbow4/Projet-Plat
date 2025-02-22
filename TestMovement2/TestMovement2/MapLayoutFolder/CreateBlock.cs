@@ -28,6 +28,13 @@ public class CreateBlock
         block.Tag = tag;
         block.Image = cachedImage;
 
+        // Special case for HealingBox: Disable physical collision response
+        if (blockType == BlockModule.BlockType.HealingBox)
+        { 
+            // Removes bump effect so player get stop like hit a wall
+            block.IgnoresCollisionResponse = true; 
+        }
+        
         game.Add(block);
     }
 

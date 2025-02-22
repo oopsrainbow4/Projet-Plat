@@ -52,6 +52,9 @@ public partial class MovementMain
                         case "HealingBox":
                             if (target is PhysicsObject healingBox)
                             {
+                                // Check if the player's HP is already full
+                                if (playerHP.Value >= CreatePlayer.MAX_HP) break;
+                                
                                 playerHP.Value += 1;
                                 
                                 // Save original position
