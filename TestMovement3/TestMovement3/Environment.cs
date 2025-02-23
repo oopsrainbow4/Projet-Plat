@@ -47,7 +47,7 @@ public class Environment
     /// </summary>
     private void SetupBackground()
     {
-        Image backgroundImage = Game.LoadImage("BackgroundImages/Background.png");
+        Image backgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
 
         // Create a physics object for the background and set its size.
         backgroundObject = new PhysicsObject(3250, 1750);

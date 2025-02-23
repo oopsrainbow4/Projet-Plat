@@ -17,7 +17,7 @@ public class CreatePlayer
         // Create the player (a block with width and height)
         player = new PhysicsObject(64, 64); // Size of the block
         
-        Image playerImage = Game.LoadImage("PlayerImages/Yellow.png");
+        Image playerImage = Game.LoadImage("Images/PlayerImages/Yellow.png");
         player.Image = playerImage;
         
         // Set initial position to the spawn point

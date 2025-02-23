@@ -21,10 +21,10 @@ public class BlockModule
     public static readonly Dictionary<BlockType, (string Tag, string ImagePath, Shape Shape,
         double Width, double Height)> BlockInfo = new()
     {
-        { BlockType.Land, ("Block", "MapLayoutImages/Block.png", Shape.Rectangle, blockWidth, blockHeight)},
-        { BlockType.Lava, ("Lava", "MapLayoutImages/Lava.png", Shape.Rectangle, blockWidth, blockHeight)},
-        { BlockType.HealingBox, ("HealingBox", "MapLayoutImages/HealingBox.png", 
+        { BlockType.Land, ("Block", "Images/MapLayoutImages/Block.png", Shape.Rectangle, blockWidth, blockHeight)},
+        { BlockType.Lava, ("Lava", "Images/MapLayoutImages/Lava.png", Shape.Rectangle, blockWidth, blockHeight)},
+        { BlockType.HealingBox, ("HealingBox", "Images/MapLayoutImages/HealingBox.png", 
             Shape.Rectangle, blockWidth/2, blockHeight/2)},
-        { BlockType.Spike, ("Spike", "MapLayoutImages/Spike.png", Shape.Triangle, blockWidth, blockHeight)}
+        { BlockType.Spike, ("Spike", "Images/MapLayoutImages/Spike.png", Shape.Triangle, blockWidth, blockHeight)}
     };
 }

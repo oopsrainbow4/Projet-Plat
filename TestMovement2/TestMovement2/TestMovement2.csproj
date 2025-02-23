@@ -24,43 +24,54 @@
 
     <ItemGroup>
       <None Remove="Content\PlayerImages\Yellow.png" />
-      <Content Include="Content\PlayerImages\Yellow.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\BackgroundImages\Background.png" />
-      <Content Include="Content\BackgroundImages\Background.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\BackgroundImages\Background2.png" />
       <None Remove="Content\EnemyImages\Red.png" />
       <None Remove="Content\MapLayoutImages\White.png" />
       <None Remove="Content\MapLayoutImages\Green.png" />
-      <Content Include="Content\MapLayoutImages\HealingBox.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\MapLayoutImages\Block.png" />
-      <Content Include="Content\MapLayoutImages\Block.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\MapLayoutImages\Lava.png" />
-      <Content Include="Content\MapLayoutImages\Lava.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\MapLayoutImages\Spike.png" />
-      <Content Include="Content\MapLayoutImages\Spike.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\EnemyImages\BasicEnemy.png" />
-      <Content Include="Content\EnemyImages\BasicEnemy.png">
+      <None Remove="Content\EnemyImages\God.png" />
+      <None Remove="Content\Images\BackgroundImages\Background.png" />
+      <Content Include="Content\Images\BackgroundImages\Background.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <None Remove="Content\EnemyImages\God.png" />
-      <Content Include="Content\EnemyImages\God.png">
+      <None Remove="Content\Images\EnemyImages\BasicEnemy.png" />
+      <Content Include="Content\Images\EnemyImages\BasicEnemy.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\EnemyImages\God.png" />
+      <Content Include="Content\Images\EnemyImages\God.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Block.png" />
+      <Content Include="Content\Images\MapLayoutImages\Block.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\HealingBox.png" />
+      <Content Include="Content\Images\MapLayoutImages\HealingBox.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Lava.png" />
+      <Content Include="Content\Images\MapLayoutImages\Lava.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Spike.png" />
+      <Content Include="Content\Images\MapLayoutImages\Spike.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\PlayerImages\Yellow.png" />
+      <Content Include="Content\Images\PlayerImages\Yellow.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Content\Images\" />
+      <Folder Include="Content\SoundEffects\" />
+      <Folder Include="Content\Soundtracks\" />
       <Folder Include="MapLayoutFolder\BlockFunction\" />
     </ItemGroup>
 

@@ -41,7 +41,7 @@ public class BasicEnemy : PhysicsObject
         this.player = player; // Store reference to the player
 
         // Set enemy appearance and behavior
-        Image = Game.LoadImage("EnemyImages/BasicEnemy.png");
+        Image = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
         Tag = "Enemy"; // Assign the "Enemy" tag for collision detection
         IgnoresGravity = false; // The enemy is affected by gravity
 

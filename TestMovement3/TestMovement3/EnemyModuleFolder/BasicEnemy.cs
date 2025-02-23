@@ -36,7 +36,7 @@ public class BasicEnemy : PhysicsObject
         this.player = player;
         Damage = data.Damage;
         
-        Image = Game.LoadImage("EnemyImages/BasicEnemy.png");
+        Image = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
         Tag = "Enemy"; // Assign enemy tag
         IgnoresGravity = false; // Enemy is affected by gravity
         
