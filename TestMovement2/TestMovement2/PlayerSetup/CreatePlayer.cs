@@ -1,4 +1,5 @@
 using Jypeli;
+using TestMovement2.Image_Sound_Storage;
 
 namespace TestMovement2.PlayerSetup;
 
@@ -16,9 +17,7 @@ public class CreatePlayer
     {
         // Create the player (a block with width and height)
         player = new PhysicsObject(64, 64); // Size of the block
-        
-        Image playerImage = Game.LoadImage("Images/PlayerImages/Yellow.png");
-        player.Image = playerImage;
+        player.Image = ImageModule.PlayerImage;
         
         // Set initial position to the spawn point
         player.X = spawnPosition.X;

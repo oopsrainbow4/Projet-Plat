@@ -1,6 +1,13 @@
+using Jypeli;
+
 namespace Projet_Plat.Image_Sound_Storage;
 
-public class ImageModule
+/// <summary>
+/// Handles centralized image loading for easy access throughout the game.
+/// </summary>
+public static class ImageModule
 {
-    
+    public static readonly Image PlayerImage = Game.LoadImage("Images/PlayerImages/Yellow.png");
+    public static readonly Image EnemyImage = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
+    public static readonly Image BackgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
 }

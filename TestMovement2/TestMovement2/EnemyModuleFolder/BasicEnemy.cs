@@ -1,5 +1,6 @@
 using System;
 using Jypeli;
+using TestMovement2.Image_Sound_Storage;
 
 namespace TestMovement2.EnemyModuleFolder;
 
@@ -41,7 +42,7 @@ public class BasicEnemy : PhysicsObject
         this.player = player; // Store reference to the player
 
         // Set enemy appearance and behavior
-        Image = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
+        Image = ImageModule.EnemyImage;
         Tag = "Enemy"; // Assign the "Enemy" tag for collision detection
         IgnoresGravity = false; // The enemy is affected by gravity
 

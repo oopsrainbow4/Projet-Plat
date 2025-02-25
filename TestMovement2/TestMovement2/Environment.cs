@@ -1,4 +1,5 @@
 using Jypeli;
+using TestMovement2.Image_Sound_Storage;
 
 namespace TestMovement2;
 
@@ -46,11 +47,9 @@ public class Environment
     /// </summary>
     private void SetupBackground()
     {
-        Image backgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
-
         // Create a physics object for the background and set its size.
         backgroundObject = new PhysicsObject(3250, 1750);
-        backgroundObject.Image = backgroundImage;
+        backgroundObject.Image = ImageModule.BackgroundImage;
         
         // Ensure the background does not interact with other objects or respond to gravity.
         backgroundObject.IgnoresCollisionResponse = true;

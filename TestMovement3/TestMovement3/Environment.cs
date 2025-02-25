@@ -1,4 +1,5 @@
 using Jypeli;
+using TestMovement3.Image_Sound_Storage;
 
 namespace TestMovement3;
 
@@ -7,7 +8,6 @@ namespace TestMovement3;
 /// </summary>
 public class Environment
 {
-    private PhysicsObject floor; // The main floor object where the player stands.
     private PhysicsObject player; // The player object, used to track movement.
     private PhysicsGame game; // The main game instance, used to access game functionality.
     private PhysicsObject backgroundObject; // The background image object.
@@ -47,11 +47,9 @@ public class Environment
     /// </summary>
     private void SetupBackground()
     {
-        Image backgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
-
         // Create a physics object for the background and set its size.
         backgroundObject = new PhysicsObject(3250, 1750);
-        backgroundObject.Image = backgroundImage;
+        backgroundObject.Image = ImageModule.BackgroundImage;
         
         // Ensure the background does not interact with other objects or respond to gravity.
         backgroundObject.IgnoresCollisionResponse = true;

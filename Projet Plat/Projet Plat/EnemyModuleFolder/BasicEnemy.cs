@@ -1,6 +1,8 @@
 using System;
 using Jypeli;
 
+using Projet_Plat.Image_Sound_Storage;
+
 namespace Projet_Plat.EnemyModuleFolder;
 
 /// <summary>
@@ -36,7 +38,7 @@ public class BasicEnemy : PhysicsObject
         this.player = player;
         Damage = data.Damage;
 
-        Image = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
+        Image = ImageModule.EnemyImage;
         Tag = "Enemy"; // Assign enemy tag
         IgnoresGravity = false; // Enemy is affected by gravity
 
