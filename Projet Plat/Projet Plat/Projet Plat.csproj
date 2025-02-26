@@ -21,7 +21,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Content\SoundEffects\" />
       <Folder Include="Content\Soundtracks\" />
     </ItemGroup>
 
@@ -52,6 +51,18 @@
       </Content>
       <None Remove="Content\Images\PlayerImages\Yellow.png" />
       <Content Include="Content\Images\PlayerImages\Yellow.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\SoundEffects\OldRobloxJump.wav" />
+      <Content Include="Content\SoundEffects\OldRobloxJump.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\SoundEffects\Ouch.wav" />
+      <Content Include="Content\SoundEffects\Ouch.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\SoundEffects\TF2_Medkit.wav" />
+      <Content Include="Content\SoundEffects\TF2_Medkit.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

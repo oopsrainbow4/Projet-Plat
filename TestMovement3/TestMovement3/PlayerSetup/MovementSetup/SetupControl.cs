@@ -1,4 +1,5 @@
 using Jypeli;
+using TestMovement3.Image_Sound_Storage;
 
 namespace TestMovement3.PlayerSetup;
 
@@ -53,6 +54,8 @@ public partial class MovementMain
 
         if (isOnGround)
         {
+            SoundModule.PlaySoundEffect("Jump");
+            
             // Perform the first jump
             player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT); 
             isDoubleJumpingAllowed = true; // Allow a double jump after the first jump
@@ -60,6 +63,8 @@ public partial class MovementMain
         }
         else if (isDoubleJumpingAllowed)
         {
+            SoundModule.PlaySoundEffect("Jump");
+            
             // Perform the double jump
             player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT); 
             isDoubleJumpingAllowed = false; // Disable further jumps until grounded

@@ -1,5 +1,6 @@
 using Jypeli;
 using Projet_Plat.EnemyModuleFolder;
+using Projet_Plat.Image_Sound_Storage;
 using Projet_Plat.PlayerSetup;
 using Projet_Plat.MapLayoutFolder;
 
@@ -44,6 +45,8 @@ public class Main : PhysicsGame
         
         // Initialize movement system with the player's object
         movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
+        
+        SoundModule.LoadSounds();
 
         // Initialize environment and set up controls
         environment = new Environment();

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Jypeli;
 using TestMovement3.EnemyModuleFolder;
+using TestMovement3.Image_Sound_Storage;
 using TestMovement3.MapLayoutFolder;
 
 namespace TestMovement3.PlayerSetup;
@@ -57,6 +58,8 @@ public partial class MovementMain
                                 
                                 playerHP.Value += 1;
                                 
+                                SoundModule.PlaySoundEffect("HealingBox");
+                                
                                 // Save original position
                                 Vector originalPosition = healingBox.Position;
                                 
@@ -75,6 +78,7 @@ public partial class MovementMain
                 else if (targetTag == "Enemy") // Handle enemy collision
                 { 
                     HandleEnemyCollision(playerObject, playerHP, target as BasicEnemy);
+                    SoundModule.PlaySoundEffect("Ouch");
                 }
             }
         };
@@ -101,6 +105,7 @@ public partial class MovementMain
     {
         if (!isInvincible)
         {
+            SoundModule.PlaySoundEffect("Ouch");
             playerHP.Value -= 1; // Reduce HP by 1
             ActivateInvincibility(); // Start invincibility timer to prevent instant damage
             ApplyKnockback(playerObject, spike); // Push the player away from the spike
