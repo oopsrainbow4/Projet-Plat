@@ -18,9 +18,9 @@ public static class SoundModule
     public static void LoadSounds()
     {
         // Load sound effects
-        soundEffects["Jump"] = (Game.LoadSoundEffect("SoundEffects/OldRobloxJump.wav"), 1.0);
+        soundEffects["Jump"] = (Game.LoadSoundEffect("SoundEffects/OldRobloxJump.wav"), 0.8);
         soundEffects["Ouch"] = (Game.LoadSoundEffect("SoundEffects/Ouch.wav"), 1.0);
-        soundEffects["HealingBox"] = (Game.LoadSoundEffect("SoundEffects/TF2_Medkit.wav"), 1.0);
+        soundEffects["HealingBox"] = (Game.LoadSoundEffect("SoundEffects/TF2_Medkit.wav"), 0.75);
 
         /*
         // Load background music
