@@ -8,9 +8,13 @@ namespace TestMovement3.Image_Sound_Storage;
 /// </summary>
 public static class SoundModule
 {
+    
     private static readonly Dictionary<string, (SoundEffect sound, double volume) > soundEffects = new();
+    
+    /*
     private static readonly Dictionary<string, (SoundEffect sound, double volume, bool loop)> backgroundMusic = new();
     private static Sound currentMusic; // Keep track of the currently playing music
+    */
 
     /// <summary>
     /// Loads all sounds and music into dictionaries.
@@ -27,7 +31,7 @@ public static class SoundModule
         backgroundMusic["TheTixHasReturned"] = (Game.LoadSoundEffect("SoundEffects/CI_ChaosCanyon.wav"), 0.8, true);
         */
     }
-
+    
     /// <summary>
     /// Plays a sound effect at its set volume.
     /// </summary>
@@ -42,6 +46,7 @@ public static class SoundModule
         }
     }
     
+    /*
     /// <summary>
     /// Plays background music with volume and looping.
     /// </summary>
@@ -74,4 +79,5 @@ public static class SoundModule
         currentMusic?.Stop();
         currentMusic = null;
     }
+	*/
 }

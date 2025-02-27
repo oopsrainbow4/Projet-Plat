@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using Jypeli;
 
 namespace TestMovement2.Image_Sound_Storage;
@@ -9,8 +11,12 @@ namespace TestMovement2.Image_Sound_Storage;
 public static class SoundModule
 {
     private static readonly Dictionary<string, (SoundEffect sound, double volume) > soundEffects = new();
-    private static readonly Dictionary<string, (SoundEffect sound, double volume, bool loop)> backgroundMusic = new();
-    private static Sound currentMusic; // Keep track of the currently playing music
+    
+    /*
+        private static readonly Dictionary<string, (SoundEffect sound, double volume, bool loop)> backgroundMusic = new(); 
+    private static string musicFilePath = @"C:\Users\gr301847\OneDrive - Jyväskylän koulutuskuntayhtymä Gradia\koulu\ICT\Project_Sounds\TheTixHasReturned.wav";
+    public static MediaPlayer mediaPlayer; // Create an instance
+    */
 
     /// <summary>
     /// Loads all sounds and music into dictionaries.
@@ -42,28 +48,14 @@ public static class SoundModule
         }
     }
     
+    /*
     /// <summary>
-    /// Plays background music with volume and looping.
+    /// Plays background music from an external file.
     /// </summary>
-    public static void PlayBackgroundMusic(string name)
+    public static void PlayBackgroundMusic()
     {
-        if (backgroundMusic.TryGetValue(name, out var musicData))
-        {
-            StopBackgroundMusic(); // Stop any currently playing music
-            
-            // Create a Sound object from SoundEffect
-            currentMusic = musicData.sound.CreateSound();
-            
-            // Set volume (Only works for background music, NOT sound effects)
-            currentMusic.Volume = musicData.volume;
-            
-            // Play and loop if needed
-            currentMusic.Play();
-            if (musicData.loop)
-            {
-                currentMusic.IsLooped = true;
-            }
-        }
+        mediaPlayer.Play("TheTixHasReturned"); // Use the file name **without .wav**
+        mediaPlayer.IsRepeating = true; // Enable looping
     }
 
     /// <summary>
@@ -71,7 +63,8 @@ public static class SoundModule
     /// </summary>
     public static void StopBackgroundMusic()
     {
-        currentMusic?.Stop();
-        currentMusic = null;
+        mediaPlayer.Stop();
     }
+    */
+
 }

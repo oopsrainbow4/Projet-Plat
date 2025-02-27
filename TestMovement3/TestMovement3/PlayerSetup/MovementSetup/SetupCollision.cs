@@ -78,7 +78,6 @@ public partial class MovementMain
                 else if (targetTag == "Enemy") // Handle enemy collision
                 { 
                     HandleEnemyCollision(playerObject, playerHP, target as BasicEnemy);
-                    SoundModule.PlaySoundEffect("Ouch");
                 }
             }
         };
@@ -123,6 +122,7 @@ public partial class MovementMain
             }
             else if (!isInvincible)
             {
+                SoundModule.PlaySoundEffect("Ouch");
                 playerHP.Value -= enemy.Damage; // Reduce player HP
                 ActivateInvincibility();
                 ApplyKnockback(playerObject, enemy);
