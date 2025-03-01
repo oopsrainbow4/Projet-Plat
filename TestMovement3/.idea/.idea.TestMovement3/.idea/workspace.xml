@@ -8,7 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/MapLayoutImages/Grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/MapLayoutImages/HealingBox2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/MapLayoutImages/Spike2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/BasicEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/BasicEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemyBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemyBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/EnemyModuleFolder/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +122,9 @@
       <workItem from="1740464978848" duration="626000" />
       <workItem from="1740584137142" duration="1008000" />
       <workItem from="1740637577246" duration="225000" />
+      <workItem from="1740644020233" duration="246000" />
+      <workItem from="1740736936419" duration="646000" />
+      <workItem from="1740812815090" duration="35000" />
     </task>
     <servers />
   </component>
