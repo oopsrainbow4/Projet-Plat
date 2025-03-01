@@ -19,14 +19,7 @@ public class CreateBlock
     /// </summary>
     public void CreateBlocks(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
     {
-        var (tag, _, shape, width, height) = BlockModule.BlockInfo[blockType];
-
-        PhysicsObject block = PhysicsObject.CreateStaticObject(width, height);
-        block.Shape = shape;
-        block.X = x;
-        block.Y = y;
-        block.Tag = tag;
-        block.Image = cachedImage;
+        PhysicsObject block = CreateBaseBlock(x, y, blockType, cachedImage);
 
         // Special case for HealingBox: Disable physical collision response
         if (blockType == BlockModule.BlockType.HealingBox)
@@ -42,6 +35,11 @@ public class CreateBlock
     /// Creates a block object without adding it to the game (for batching).
     /// </summary>
     public PhysicsObject CreateBlockObject(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
+    {
+        return CreateBaseBlock(x, y, blockType, cachedImage);
+    }
+    
+    private PhysicsObject CreateBaseBlock(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
     {
         var (tag, _, shape, width, height) = BlockModule.BlockInfo[blockType];
 

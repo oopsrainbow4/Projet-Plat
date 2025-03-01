@@ -7,17 +7,12 @@ namespace TestMovement2.EnemyModuleFolder;
 /// <summary>
 /// Represents a basic enemy that moves left and right, detects the player, and attacks.
 /// </summary>
-public class BasicEnemy : PhysicsObject
+public class BasicEnemy : EnemyBase
 {
-    private readonly double speed; // The movement speed of the enemy
     private readonly double patrolRange; // The maximum distance the enemy moves before turning
     private readonly double startX; // The initial X position of the enemy (used for patrol range calculation)
     private bool movingRight = true; // Keeps track of the enemy's current movement direction
     private readonly PhysicsObject player; // Reference to the player object
-    
-    // Enemy stats
-    public int Damage { get; private set; } // The amount of damage the enemy deals to the player
-    public int HP { get; private set; } // The enemy's health points (HP)
 
     /// <summary>
     /// Constructor for the BasicEnemy. Sets initial position, movement, and properties.
@@ -34,7 +29,7 @@ public class BasicEnemy : PhysicsObject
         
         // Assign stats from EnemyData
         HP = data.HP;
-        speed = data.Speed;
+        Speed = data.Speed;
         patrolRange = data.PatrolRange;
         Damage = data.Damage;
 
@@ -65,7 +60,7 @@ public class BasicEnemy : PhysicsObject
     /// </summary>
     private void Patrol()
     {
-        if (Math.Abs(player.X - X) <= patrolRange) // Check if the player is within the patrol range
+        if (Position.Distance(player.Position) <= patrolRange) // Check if the player is within the patrol range
         {
             ChasePlayer(); // If the player is close enough, chase them
         }
@@ -85,12 +80,12 @@ public class BasicEnemy : PhysicsObject
     {
         if (movingRight)
         {
-            Velocity = new Vector(speed, 0); // Move right
+            Velocity = new Vector(Speed, 0); // Move right
             if (X >= startX + patrolRange) movingRight = false; // If reached patrol limit, turn left
         }
         else
         {
-            Velocity = new Vector(-speed, 0); // Move left
+            Velocity = new Vector(-Speed, 0); // Move left
             if (X <= startX - patrolRange) movingRight = true; // If reached patrol limit, turn right
         }
     }
@@ -101,21 +96,6 @@ public class BasicEnemy : PhysicsObject
     private void ChasePlayer()
     {
         double direction = player.X > X ? 1 : -1; // Determine direction towards the player
-        Velocity = new Vector(speed * direction, 0); // Move in the player's direction
-    }
-
-    /// <summary>
-    /// Reduces the enemy's HP when they take damage.
-    /// If HP reaches 0, the enemy is destroyed.
-    /// </summary>
-    /// <param name="amount">Amount of damage the enemy takes</param>
-    public void TakeDamage(int amount)
-    {
-        HP -= amount; // Reduce HP by the given damage amount
-        
-        if (HP <= 0) // Check if the enemy should be destroyed
-        {
-            Destroy(); // Remove the enemy from the game
-        }
+        Velocity = new Vector(Speed * direction, 0); // Move in the player's direction
     }
 }

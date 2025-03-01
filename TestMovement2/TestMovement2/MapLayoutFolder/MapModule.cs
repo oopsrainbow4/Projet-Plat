@@ -25,11 +25,7 @@ public class MapModule
         // Preload images to avoid repeated loading
         foreach (var blockType in BlockModule.BlockInfo.Keys)
         {
-            var imagePath = BlockModule.BlockInfo[blockType].ImagePath;
-            if (!string.IsNullOrEmpty(imagePath))
-            {
-                cachedImages[blockType] = Game.LoadImage(imagePath);
-            }
+            cachedImages[blockType] = BlockModule.BlockInfo[blockType].Image; // Use preloaded images
         }
     }
 
