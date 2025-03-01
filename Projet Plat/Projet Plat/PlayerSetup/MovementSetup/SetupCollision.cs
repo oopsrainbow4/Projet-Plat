@@ -58,7 +58,7 @@ public partial class MovementMain
                                 
                                 playerHP.Value += 1;
                                 
-                                SoundModule.PlaySoundEffect("HealingBox");
+                                SoundModule.PlaySoundEffect(SoundData.HealingBox);
                                 
                                 // Save original position
                                 Vector originalPosition = healingBox.Position;
@@ -104,7 +104,7 @@ public partial class MovementMain
     {
         if (!isInvincible)
         {
-            SoundModule.PlaySoundEffect("Ouch");
+            SoundModule.PlaySoundEffect(SoundData.Ouch);
             playerHP.Value -= 1; // Reduce HP by 1
             ActivateInvincibility(); // Start invincibility timer to prevent instant damage
             ApplyKnockback(playerObject, spike); // Push the player away from the spike
@@ -122,7 +122,7 @@ public partial class MovementMain
             }
             else if (!isInvincible)
             {
-                SoundModule.PlaySoundEffect("Ouch");
+                SoundModule.PlaySoundEffect(SoundData.Ouch);
                 playerHP.Value -= enemy.Damage; // Reduce player HP
                 ActivateInvincibility();
                 ApplyKnockback(playerObject, enemy);

@@ -1,7 +1,5 @@
-using System;
 using Jypeli;
 using System.Collections.Generic;
-using TestMovement2.EnemyModuleFolder;
 
 namespace TestMovement2.MapLayoutFolder;
 
@@ -14,7 +12,7 @@ public class MapModule
     private readonly CreateBlock createBlock;
     private Vector spawnPoint; // Store the spawn point coordinates
     private readonly Dictionary<BlockModule.BlockType, Image> cachedImages; // Cache images
-    private List<Vector> enemyPositions = new List<Vector>(); // Store enemy positions
+    private readonly List<Vector> enemyPositions = []; // Store enemy positions
     
     public MapModule(PhysicsGame gameInstance)
     {

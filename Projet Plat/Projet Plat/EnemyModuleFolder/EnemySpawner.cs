@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using Jypeli;
@@ -11,35 +10,24 @@ namespace Projet_Plat.EnemyModuleFolder;
 /// </summary>
 public class EnemySpawner
 {
-    private Game game;
-    private PhysicsObject player;
-
-    public EnemySpawner(Game game, PhysicsObject player)
-    {
-        this.game = game;
-        this.player = player;
-    }
-
     /// <summary>
     /// Spawns an enemy of the given type at the specified position.
     /// </summary>
     public static void SpawnEnemy(double x, double y)
     {
-        EnemyData enemyData = EnemyManager.GetEnemyData("BasicEnemy"); // Fetch enemy stats
-        if (enemyData != null)
+        EnemyData enemyData = EnemyManager.GetEnemyData("BasicEnemy");
+        if (enemyData == null) return;
+
+        // Wait for player to exist before spawning
+        PhysicsObject player = Game.Instance.GetObjectsWithTag("Player").FirstOrDefault() as PhysicsObject;
+        if (player == null)
         {
-            // Get the first object with the "Player" tag
-            PhysicsObject player = Game.Instance.GetObjectsWithTag("Player").FirstOrDefault() as PhysicsObject;
-            if (player != null)
-            {
-                BasicEnemy enemy = new BasicEnemy(x, y, enemyData, player);
-                Game.Instance.Add(enemy); // Add enemy to game world
-            }
-            else
-            {
-                Console.WriteLine("Player not found! Enemy not spawned.");
-            }
+            Timer.SingleShot(0.5, () => SpawnEnemy(x, y)); // Retry after 0.5s
+            return;
         }
+
+        BasicEnemy enemy = new BasicEnemy(x, y, enemyData, player);
+        Game.Instance.Add(enemy);
     }
     
     /// <summary>

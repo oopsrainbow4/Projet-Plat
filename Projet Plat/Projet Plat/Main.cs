@@ -46,6 +46,7 @@ public class Main : PhysicsGame
         // Initialize movement system with the player's object
         movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
         
+        // Load all sounds at the start of the game
         SoundModule.LoadSounds();
 
         // Initialize environment and set up controls

@@ -1,7 +1,5 @@
-using System;
 using Jypeli;
 using System.Collections.Generic;
-using Projet_Plat.EnemyModuleFolder;
 
 namespace Projet_Plat.MapLayoutFolder;
 
@@ -14,7 +12,7 @@ public class MapModule
     private readonly CreateBlock createBlock;
     private Vector spawnPoint; // Store the spawn point coordinates
     private readonly Dictionary<BlockModule.BlockType, Image> cachedImages; // Cache images
-    private List<Vector> enemyPositions = new List<Vector>(); // Store enemy positions
+    private readonly List<Vector> enemyPositions = []; // Store enemy positions
     
     public MapModule(PhysicsGame gameInstance)
     {
@@ -25,11 +23,7 @@ public class MapModule
         // Preload images to avoid repeated loading
         foreach (var blockType in BlockModule.BlockInfo.Keys)
         {
-            var imagePath = BlockModule.BlockInfo[blockType].ImagePath;
-            if (!string.IsNullOrEmpty(imagePath))
-            {
-                cachedImages[blockType] = Game.LoadImage(imagePath);
-            }
+            cachedImages[blockType] = BlockModule.BlockInfo[blockType].Image; // Use preloaded images
         }
     }
 

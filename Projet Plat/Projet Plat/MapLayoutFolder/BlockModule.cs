@@ -1,5 +1,6 @@
 using Jypeli;
 using System.Collections.Generic;
+using Projet_Plat.Image_Sound_Storage;
 
 namespace Projet_Plat.MapLayoutFolder;
 
@@ -18,13 +19,13 @@ public class BlockModule
         Spike
     }
 
-    public static readonly Dictionary<BlockType, (string Tag, string ImagePath, Shape Shape,
+    public static readonly Dictionary<BlockType, (string Tag, Image Image, Shape Shape,
         double Width, double Height)> BlockInfo = new()
     {
-        { BlockType.Land, ("Block", "Images/MapLayoutImages/Block.png", Shape.Rectangle, blockWidth, blockHeight)},
-        { BlockType.Lava, ("Lava", "Images/MapLayoutImages/Lava.png", Shape.Rectangle, blockWidth, blockHeight)},
-        { BlockType.HealingBox, ("HealingBox", "Images/MapLayoutImages/HealingBox.png", 
-            Shape.Rectangle, blockWidth/2, blockHeight/2)},
-        { BlockType.Spike, ("Spike", "Images/MapLayoutImages/Spike.png", Shape.Triangle, blockWidth, blockHeight)}
+        { BlockType.Land, ("Block", ImageModule.BlockImage, Shape.Rectangle, blockWidth, blockHeight) },
+        { BlockType.Lava, ("Lava", ImageModule.LavaImage, Shape.Rectangle, blockWidth, blockHeight) },
+        { BlockType.HealingBox, ("HealingBox", ImageModule.HealingBoxImage, Shape.Rectangle, blockWidth, blockHeight) },
+        { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) }
+        
     };
 }
