@@ -1,18 +1,18 @@
 using System;
 using System.Linq;
 using Jypeli;
-
+using TestMovement2.MapLayoutFolder.BlockSystem;
 using TestMovement3.EnemyModuleFolder;
 using TestMovement3.Image_Sound_Storage;
 using TestMovement3.MapLayoutFolder;
-using TestMovement3.MapLayoutFolder.BlockFunction;
+using TestMovement3.MapLayoutFolder.BlockSystem;
 
 namespace TestMovement3.PlayerSetup;
 
 public partial class MovementMain
 {
     // Tracks whether the player is temporarily invincible after taking damage
-    private bool isInvincible;
+    public bool isInvincible;
     private Timer invincibilityTimer;  // Timer to handle invincibility duration
     private Timer waterExitCheckTimer;
     private bool isInWater;     // Tracks if the player is inside water
@@ -40,7 +40,7 @@ public partial class MovementMain
         waterEffectTimer.Timeout += () =>
         {
             if (isInWater)
-                Water.ApplyWaterEffects(playerObject, this);
+                WaterModule.ApplyWaterEffects(playerObject, this);
         };
         
         // Water check timer (runs every 0.1 seconds)
@@ -51,7 +51,7 @@ public partial class MovementMain
             {
                 isInWater = false;
                 waterEffectTimer.Stop();
-                Water.RemoveWaterEffects(playerObject, this);
+                WaterModule.RemoveWaterEffects(playerObject, this);
             }
         };
         waterExitCheckTimer.Start();
@@ -71,7 +71,8 @@ public partial class MovementMain
                     switch (target.Tag.ToString())
                     {
                         case "Spike":
-                            HandleSpikeCollision(playerObject, playerHP, target);
+                            //HandleSpikeCollision(playerObject, playerHP, target);
+                            SpikeModule.HandleSpikeCollision(this, playerObject, playerHP, target);
                             break;
                         case "Lava":
                             if (!isInvincible) playerHP.Value -= 10;
@@ -80,30 +81,13 @@ public partial class MovementMain
                             if (!isInWater) // Avoid applying effects multiple times
                             {
                                 isInWater = true;
-                                Water.ApplyWaterEffects(playerObject, this);
+                                WaterModule.ApplyWaterEffects(playerObject, this);
                             }
                             break;
                         case "HealingBox":
                             if (target is PhysicsObject healingBox)
                             {
-                                // Check if the player's HP is already full
-                                if (playerHP.Value >= CreatePlayer.MAX_HP) break;
-                                
-                                playerHP.Value += 1;
-                                
-                                SoundModule.PlaySoundEffect(SoundData.HealingBox);
-                                
-                                // Save original position
-                                Vector originalPosition = healingBox.Position;
-                                
-                                // Move it off-screen
-                                healingBox.Position = new Vector(-9999, -9999);
-
-                                // Restore after 3 seconds
-                                Timer.SingleShot(3.0, () =>
-                                {
-                                    healingBox.Position = originalPosition; // Bring it back
-                                });
+                                HealingBoxModule.HandleHealingBoxCollision(playerObject, playerHP, healingBox);
                             }
                             break;
                     } 
@@ -115,8 +99,6 @@ public partial class MovementMain
             }
         };
         
-        
-
         // Timer to check if the player is no longer colliding with the block
         Timer groundCheckTimer = new Timer { Interval = 0.1};
         groundCheckTimer.Timeout += () =>
@@ -125,20 +107,6 @@ public partial class MovementMain
             if (!isOnGround) isOnGround = false;
         };
         groundCheckTimer.Start(); // Start the timer
-    }
-
-    /// <summary>
-    /// Handles collision with spikes by reducing health and applying knockback.
-    /// </summary>
-    private void HandleSpikeCollision(PhysicsObject playerObject, IntMeter playerHP, IPhysicsObject spike)
-    {
-        if (!isInvincible)
-        {
-            SoundModule.PlaySoundEffect(SoundData.Ouch);
-            playerHP.Value -= 1; // Reduce HP by 1
-            ActivateInvincibility(); // Start invincibility timer to prevent instant damage
-            ApplyKnockback(playerObject, spike); // Push the player away from the spike
-        }
     }
 
     private void HandleEnemyCollision(PhysicsObject playerObject, IntMeter playerHP, BasicEnemy enemy)
@@ -163,7 +131,7 @@ public partial class MovementMain
     /// <summary>
     /// Activates temporary invincibility after taking damage.
     /// </summary>
-    private void ActivateInvincibility()
+    public void ActivateInvincibility()
     {
         isInvincible = true;  // Player becomes invincible
         invincibilityTimer.Start(); // Start the timer to track duration

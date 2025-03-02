@@ -1,9 +1,9 @@
 using Jypeli;
 using TestMovement3.PlayerSetup;
 
-namespace TestMovement3.MapLayoutFolder.BlockFunction;
+namespace TestMovement3.MapLayoutFolder.BlockSystem;
 
-public class Water
+public class WaterModule
 {
     public static void ApplyWaterEffects(PhysicsObject player, MovementMain playerMovement)
     {
