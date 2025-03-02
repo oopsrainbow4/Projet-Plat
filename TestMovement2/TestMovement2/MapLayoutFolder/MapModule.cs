@@ -76,6 +76,7 @@ public class MapModule
                        '^' => BlockModule.BlockType.Spike,
                        '+' => BlockModule.BlockType.HealingBox,
                        'L' => BlockModule.BlockType.Lava,
+                       'w' => BlockModule.BlockType.Water,
                        's' => null, // Player spawn
                        _ => null 
                    }; 
@@ -84,7 +85,8 @@ public class MapModule
                    { 
                        if (blockType == BlockModule.BlockType.Land || 
                          blockType == BlockModule.BlockType.Spike || 
-                         blockType == BlockModule.BlockType.Lava) 
+                         blockType == BlockModule.BlockType.Lava ||
+                         blockType == BlockModule.BlockType.Water) 
                         {
                             // Optimize by batching static blocks
                             var block = createBlock.CreateBlockObject(posX, posY, blockType.Value, 

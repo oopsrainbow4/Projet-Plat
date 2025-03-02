@@ -16,4 +16,5 @@ public static class ImageModule
     public static readonly Image LavaImage = Game.LoadImage("Images/MapLayoutImages/Lava.png");
     public static readonly Image HealingBoxImage = Game.LoadImage("Images/MapLayoutImages/HealingBox2.png");
     public static readonly Image SpikeImage = Game.LoadImage("Images/MapLayoutImages/Spike2.png");
+    public static readonly Image WaterImage = Game.LoadImage("Images/MapLayoutImages/Water.png");
 }

@@ -21,11 +21,11 @@ public class CreateBlock
     {
         PhysicsObject block = CreateBaseBlock(x, y, blockType, cachedImage);
 
-        // Special case for HealingBox: Disable physical collision response
+        // Special cases for certain blocks
         if (blockType == BlockModule.BlockType.HealingBox)
         { 
             // Removes bump effect so player get stop like hit a wall
-            block.IgnoresCollisionResponse = true; 
+            block.IgnoresCollisionResponse = true;
         }
         
         game.Add(block);
@@ -36,7 +36,14 @@ public class CreateBlock
     /// </summary>
     public PhysicsObject CreateBlockObject(double x, double y, BlockModule.BlockType blockType, Image cachedImage)
     {
-        return CreateBaseBlock(x, y, blockType, cachedImage);
+        PhysicsObject block = CreateBaseBlock(x, y, blockType, cachedImage);
+
+        // Special cases for certain blocks
+        if (blockType == BlockModule.BlockType.Water)
+        {
+            block.IgnoresCollisionResponse = true;
+        }
+        return block;
     }
     
     private PhysicsObject CreateBaseBlock(double x, double y, BlockModule.BlockType blockType, Image cachedImage)

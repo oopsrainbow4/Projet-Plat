@@ -25,7 +25,7 @@ public class CreatePlayer
         player.Mass = 1;
         player.Restitution = 0.2; // Slight bounce
         player.Tag = "Player";
-        game.Add(player);
+        game.Add(player,1);
 
         // Initialize player's HP
         playerHP = new IntMeter(MAX_HP, 0, MAX_HP); // 5 max HP, minimum 0
