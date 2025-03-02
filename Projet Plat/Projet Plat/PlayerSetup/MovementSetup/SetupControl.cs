@@ -52,14 +52,18 @@ public partial class MovementMain
     {
         if (!isJumpKeyReleased) return; // Prevent holding the jump key
 
-        if (isOnGround)
+        if (isOnGround || isInWater)
         {
             SoundModule.PlaySoundEffect(SoundData.Jump);
             
             // Perform the first jump
-            player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT); 
-            isDoubleJumpingAllowed = true; // Allow a double jump after the first jump
-            isOnGround = false;            // The player is now in the air
+            player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT);
+
+            if (!isInWater) // Normal jump behavior
+            {
+                isDoubleJumpingAllowed = true; // Allow a double jump after the first jump
+                isOnGround = false;            // The player is now in the air
+            }
         }
         else if (isDoubleJumpingAllowed)
         {

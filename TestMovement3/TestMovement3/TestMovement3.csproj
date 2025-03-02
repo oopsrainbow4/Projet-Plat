@@ -59,6 +59,10 @@
       <Content Include="Content\SoundEffects\TF2_Medkit.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\Images\MapLayoutImages\Water.png" />
+      <Content Include="Content\Images\MapLayoutImages\Water.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

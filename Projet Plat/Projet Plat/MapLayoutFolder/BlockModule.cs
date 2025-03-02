@@ -16,7 +16,8 @@ public class BlockModule
         Land,
         Lava,
         HealingBox,
-        Spike
+        Spike,
+        Water
     }
 
     public static readonly Dictionary<BlockType, (string Tag, Image Image, Shape Shape,
@@ -25,7 +26,8 @@ public class BlockModule
         { BlockType.Land, ("Block", ImageModule.BlockImage, Shape.Rectangle, blockWidth, blockHeight) },
         { BlockType.Lava, ("Lava", ImageModule.LavaImage, Shape.Rectangle, blockWidth, blockHeight) },
         { BlockType.HealingBox, ("HealingBox", ImageModule.HealingBoxImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) }
+        { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) },
+        { BlockType.Water, ("Water", ImageModule.WaterImage, Shape.Rectangle, blockWidth, blockHeight) }
         
     };
 }
