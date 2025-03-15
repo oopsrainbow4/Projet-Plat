@@ -17,7 +17,9 @@ public class BlockModule
         Lava,
         HealingBox,
         Spike,
-        Water
+        Water,
+        SpeedBoost,
+        JumpPad
     }
 
     public static readonly Dictionary<BlockType, (string Tag, Image Image, Shape Shape,
@@ -27,6 +29,8 @@ public class BlockModule
         { BlockType.Lava, ("Lava", ImageModule.LavaImage, Shape.Rectangle, blockWidth, blockHeight) },
         { BlockType.HealingBox, ("HealingBox", ImageModule.HealingBoxImage, Shape.Rectangle, blockWidth, blockHeight) },
         { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) },
-        { BlockType.Water, ("Water", ImageModule.WaterImage, Shape.Rectangle, blockWidth, blockHeight) }
+        { BlockType.Water, ("Water", ImageModule.WaterImage, Shape.Rectangle, blockWidth, blockHeight) },
+        { BlockType.SpeedBoost, ("SpeedBoost", ImageModule.SpeedBoostImage, Shape.Rectangle, blockWidth, blockHeight) },
+        { BlockType.JumpPad, ("JumpPad", ImageModule.JumpPadImage, Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5) }
     };
 }

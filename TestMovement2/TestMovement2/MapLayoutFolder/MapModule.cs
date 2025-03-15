@@ -60,7 +60,7 @@ public class MapModule
                 double posX = x * blockWidth - (layout[0].Length * blockWidth / 2);
                 double posY = -(y * blockHeight - (layout.Length * blockHeight / 2));
                 
-                if (tile == 's')
+                if (tile == 'S')
                 {
                     spawnPoint = new Vector(posX, posY);
                 }
@@ -77,7 +77,9 @@ public class MapModule
                        '+' => BlockModule.BlockType.HealingBox,
                        'L' => BlockModule.BlockType.Lava,
                        'w' => BlockModule.BlockType.Water,
-                       's' => null, // Player spawn
+                       's' => BlockModule.BlockType.SpeedBoost,
+                       'j' => BlockModule.BlockType.JumpPad,
+                       'S' => null, // Player spawn
                        _ => null 
                    }; 
                    

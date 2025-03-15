@@ -86,8 +86,14 @@ public partial class MovementMain
                         case "HealingBox":
                             if (target is PhysicsObject healingBox)
                             {
-                                HealingBoxModule.HandleHealingBoxCollision(playerObject, playerHP, healingBox);
+                                HealingBoxModule.HandleHealingBoxCollision(playerHP, healingBox);
                             }
+                            break;
+                        case "SpeedBoost":
+                            SpeedBoostModule.ApplySpeedBoost(playerObject, MAX_SPEED);
+                            break;
+                        case "JumpPad":
+                            isOnJumpPad = true;
                             break;
                     } 
                 }

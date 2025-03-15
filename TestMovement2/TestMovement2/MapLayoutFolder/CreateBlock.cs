@@ -11,7 +11,7 @@ public class CreateBlock
 
     public CreateBlock(PhysicsGame gameInstance)
     {
-        game = gameInstance;
+        game = gameInstance; 
     }
 
     /// <summary>
@@ -22,12 +22,13 @@ public class CreateBlock
         PhysicsObject block = CreateBaseBlock(x, y, blockType, cachedImage);
 
         // Special cases for certain blocks
-        if (blockType == BlockModule.BlockType.HealingBox)
+        if (blockType == BlockModule.BlockType.HealingBox ||
+            blockType == BlockModule.BlockType.SpeedBoost ||
+            blockType == BlockModule.BlockType.JumpPad)
         { 
             // Removes bump effect so player get stop like hit a wall
             block.IgnoresCollisionResponse = true;
         }
-        
         game.Add(block);
     }
 

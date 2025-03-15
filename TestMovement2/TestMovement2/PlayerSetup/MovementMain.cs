@@ -23,6 +23,7 @@ public partial class MovementMain
     private bool isDoubleJumpingAllowed; // Whether the player can perform a double jump
     private bool isJumpKeyReleased;      // To ensure the jump key isn't held down
     private bool isOnGround;             // Tracks whether the player is grounded
+    private bool isOnJumpPad = false;
     
     
     
