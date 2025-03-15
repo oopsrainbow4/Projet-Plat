@@ -30,21 +30,12 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\Images\MapLayoutImages\Block.png" />
-      <Content Include="Content\Images\MapLayoutImages\Block.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\Images\MapLayoutImages\HealingBox.png" />
-      <Content Include="Content\Images\MapLayoutImages\HealingBox.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\Images\MapLayoutImages\Lava.png" />
       <Content Include="Content\Images\MapLayoutImages\Lava.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\Images\MapLayoutImages\Spike.png" />
-      <Content Include="Content\Images\MapLayoutImages\Spike.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Content\Images\EnemyImages\BasicEnemy.png" />
       <Content Include="Content\Images\EnemyImages\BasicEnemy.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -67,6 +58,26 @@
       </Content>
       <None Remove="Content\Images\MapLayoutImages\Water.png" />
       <Content Include="Content\Images\MapLayoutImages\Water.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Grass.png" />
+      <Content Include="Content\Images\MapLayoutImages\Grass.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\HealingBox2.png" />
+      <Content Include="Content\Images\MapLayoutImages\HealingBox2.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\JumpPad.png" />
+      <Content Include="Content\Images\MapLayoutImages\JumpPad.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\SpeedBoost.png" />
+      <Content Include="Content\Images\MapLayoutImages\SpeedBoost.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Spike3.png" />
+      <Content Include="Content\Images\MapLayoutImages\Spike3.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

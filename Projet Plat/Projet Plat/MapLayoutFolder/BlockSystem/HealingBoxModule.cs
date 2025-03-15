@@ -9,11 +9,11 @@ public static class HealingBoxModule
     /// <summary>
     /// Handles the player's interaction with a HealingBox.
     /// </summary>
-    public static void HandleHealingBoxCollision(PhysicsObject player, IntMeter playerHP, PhysicsObject healingBox)
+    public static void HandleHealingBoxCollision(IntMeter playerHP, PhysicsObject healingBox)
     {
         if (playerHP.Value >= CreatePlayer.MAX_HP) return; // Prevent overhealing
 
-        playerHP.Value += 1;
+        playerHP.Value += 5;
         SoundModule.PlaySoundEffect(SoundData.HealingBox);
         
         Vector originalPosition = healingBox.Position; // Save original position

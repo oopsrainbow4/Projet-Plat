@@ -1,11 +1,10 @@
 using System;
 using System.Linq;
 using Jypeli;
-using TestMovement2.MapLayoutFolder.BlockSystem;
+using TestMovement3.MapLayoutFolder.BlockSystem;
 using TestMovement3.EnemyModuleFolder;
 using TestMovement3.Image_Sound_Storage;
 using TestMovement3.MapLayoutFolder;
-using TestMovement3.MapLayoutFolder.BlockSystem;
 
 namespace TestMovement3.PlayerSetup;
 
@@ -87,8 +86,14 @@ public partial class MovementMain
                         case "HealingBox":
                             if (target is PhysicsObject healingBox)
                             {
-                                HealingBoxModule.HandleHealingBoxCollision(playerObject, playerHP, healingBox);
+                                HealingBoxModule.HandleHealingBoxCollision(playerHP, healingBox);
                             }
+                            break;
+                        case "SpeedBoost":
+                            SpeedBoostModule.ApplySpeedBoost(playerObject, MAX_SPEED);
+                            break;
+                        case "JumpPad":
+                            isOnJumpPad = true;
                             break;
                     } 
                 }
@@ -98,7 +103,7 @@ public partial class MovementMain
                 }
             }
         };
-        
+
         // Timer to check if the player is no longer colliding with the block
         Timer groundCheckTimer = new Timer { Interval = 0.1};
         groundCheckTimer.Timeout += () =>

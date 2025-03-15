@@ -8,22 +8,24 @@ public class MapLayout
     /// "#" Land
     /// "^" Spike
     /// "+" Healing Box
-    /// "s" Player's Spawn Point
+    /// "S" Player's Spawn Point
     /// "L" Lava
     /// "E" Basic Enemy
     /// "w" Water
+    /// "s" SpeedBoost
+    /// "j" JumpPad
     public string[] GetLayout()
     {
         return
         [
-            "                          s ",
-            "                 ",
-            "                    +        ",
-            "                   ##              E       E",
-            "        +     L   ##  #^#        ",
-            "####wwwwwww####################^^####################################### ",
-            "####wwwwwwww#########",
-            "####################"
+            "                            S ",
+            "                                                  ",
+            "                           +        ",
+            "   E                       ##                     ",
+            "       s  j     +     L   ##  #^#              s   ",
+            "############wwwwwww####################^^####################################### ",
+            "        ####wwwwwwww#########",
+            "            wwwwwww"
         ];
     }
 }

@@ -2,7 +2,7 @@ using Jypeli;
 using TestMovement3.Image_Sound_Storage;
 using TestMovement3.PlayerSetup;
 
-namespace TestMovement2.MapLayoutFolder.BlockSystem;
+namespace TestMovement3.MapLayoutFolder.BlockSystem;
 
 public static class SpikeModule
 {

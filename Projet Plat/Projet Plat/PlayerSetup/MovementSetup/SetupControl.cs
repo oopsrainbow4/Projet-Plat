@@ -1,5 +1,6 @@
 using Jypeli;
 using Projet_Plat.Image_Sound_Storage;
+using Projet_Plat.MapLayoutFolder.BlockSystem;
 
 namespace Projet_Plat.PlayerSetup;
 
@@ -52,25 +53,28 @@ public partial class MovementMain
     {
         if (!isJumpKeyReleased) return; // Prevent holding the jump key
 
+        double adjustedJumpHeight = JumpPadModule.GetJumpPadBoost(JUMP_HEIGHT, isOnJumpPad);
+        
         if (isOnGround || isInWater)
         {
             SoundModule.PlaySoundEffect(SoundData.Jump);
             
             // Perform the first jump
-            player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT);
+            player.Velocity = new Vector(player.Velocity.X, adjustedJumpHeight);
 
             if (!isInWater) // Normal jump behavior
             {
                 isDoubleJumpingAllowed = true; // Allow a double jump after the first jump
                 isOnGround = false;            // The player is now in the air
             }
+            isOnJumpPad = false; // Reset jump pad effect after jumping
         }
         else if (isDoubleJumpingAllowed)
         {
             SoundModule.PlaySoundEffect(SoundData.Jump);
             
             // Perform the double jump
-            player.Velocity = new Vector(player.Velocity.X, JUMP_HEIGHT); 
+            player.Velocity = new Vector(player.Velocity.X, adjustedJumpHeight); 
             isDoubleJumpingAllowed = false; // Disable further jumps until grounded
         }
         isJumpKeyReleased = false; // Prevent holding the jump key
