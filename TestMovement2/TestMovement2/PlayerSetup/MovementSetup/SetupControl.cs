@@ -57,7 +57,10 @@ public partial class MovementMain
         
         if (isOnGround || isInWater)
         {
-            SoundModule.PlaySoundEffect(SoundData.Jump);
+            if (!isOnJumpPad) // Only play jump sound if NOT jumping from Jump Pad
+            {
+               SoundModule.PlaySoundEffect(SoundData.Jump); 
+            }
             
             // Perform the first jump
             player.Velocity = new Vector(player.Velocity.X, adjustedJumpHeight);

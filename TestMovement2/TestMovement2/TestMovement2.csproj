@@ -98,6 +98,14 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\Images\MapLayoutImages\Jump_Pad.png" />
+      <None Remove="Content\SoundEffects\SonicSpinDash.wav" />
+      <Content Include="Content\SoundEffects\SonicSpinDash.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\SoundEffects\GravityCoil.wav" />
+      <Content Include="Content\SoundEffects\GravityCoil.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

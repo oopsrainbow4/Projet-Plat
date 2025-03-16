@@ -80,6 +80,14 @@
       <Content Include="Content\Images\MapLayoutImages\Spike3.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\SoundEffects\GravityCoil.wav" />
+      <Content Include="Content\SoundEffects\GravityCoil.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\SoundEffects\SonicSpinDash.wav" />
+      <Content Include="Content\SoundEffects\SonicSpinDash.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -1,22 +1,27 @@
 using System;
 using Jypeli;
 using System.Collections.Generic;
+using TestMovement2.Image_Sound_Storage;
 
 namespace TestMovement2.MapLayoutFolder.BlockSystem;
-
-
 public static class SpeedBoostModule
 {
     private static readonly double SpeedBoostAmount = 500;  // Adjust as needed
-    private static readonly double BoostDuration = 0.5; // Boost lasts for 2 seconds
-    private static readonly double AccelerationRate = 50.0; // How much speed increases per step
-    private static readonly double DecelerationRate = 30.0; // Slow down speed per step
+    private static readonly double BoostDuration = 0.5; // How long the boost lasts
+    private static readonly double AccelerationRate = 100.0; // How much speed increases per step
+    private static readonly double DecelerationRate = 200.0; // Slow down speed per step
 
     private static readonly Dictionary<PhysicsObject, Timer> activeBoosts = new();
 
     public static void ApplySpeedBoost(PhysicsObject player, double maxSpeed)
     {
         if (player == null || activeBoosts.ContainsKey(player)) return; // Prevent multiple boost stacks
+        
+        // Only play the sound effect if the player is NOT already boosting
+        if (!activeBoosts.ContainsKey(player))
+        {
+            SoundModule.PlaySoundEffect(SoundData.SpeedBoost);
+        }
 
         double boostDirection = player.Velocity.X >= 0 ? 1 : -1; // Determine movement direction
         double newMaxSpeed = maxSpeed + SpeedBoostAmount;

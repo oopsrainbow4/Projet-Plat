@@ -8,4 +8,6 @@ public static class SoundData
     public const string Jump = "Jump";
     public const string Ouch = "Ouch";
     public const string HealingBox = "HealingBox";
+    public const string JumpPad = "JumpPad";
+    public const string SpeedBoost = "SpeedBoost";
 }
