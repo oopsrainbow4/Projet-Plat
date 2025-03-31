@@ -1,10 +1,10 @@
 using System;
 using System.Linq;
 using Jypeli;
+using TestMovement2.MapLayoutFolder.BlockSystem;
 using TestMovement2.EnemyModuleFolder;
 using TestMovement2.Image_Sound_Storage;
 using TestMovement2.MapLayoutFolder;
-using TestMovement2.MapLayoutFolder.BlockSystem;
 
 namespace TestMovement2.PlayerSetup;
 
@@ -13,7 +13,6 @@ public partial class MovementMain
     // Tracks whether the player is temporarily invincible after taking damage
     public bool isInvincible;
     private Timer invincibilityTimer;  // Timer to handle invincibility duration
-    private Timer waterExitCheckTimer;
     private bool isInWater;     // Tracks if the player is inside water
     private Timer waterEffectTimer;
     
@@ -41,19 +40,6 @@ public partial class MovementMain
             if (isInWater)
                 WaterModule.ApplyWaterEffects(playerObject, this);
         };
-        
-        // Water check timer (runs every 0.1 seconds)
-        waterExitCheckTimer = new Timer { Interval = 0.1 };
-        waterExitCheckTimer.Timeout += () =>
-        {
-            if (isInWater && !IsPlayerTouchingWater(playerObject))
-            {
-                isInWater = false;
-                waterEffectTimer.Stop();
-                WaterModule.RemoveWaterEffects(playerObject, this);
-            }
-        };
-        waterExitCheckTimer.Start();
         
         // Detect when the player collides with objects.
         playerObject.Collided += (_, target) =>
@@ -150,25 +136,5 @@ public partial class MovementMain
         // Determine the direction of knockback based on relative positions
         Vector knockbackDirection = (playerCharacter.Position - spike.Position).Normalize();
         player.Velocity = knockbackDirection * 600; // Apply knockback velocity (adjust the multiplier as needed)
-    }
-    
-    /// <summary>
-    /// Checks if the player is still touching water.
-    /// </summary>
-    private bool IsPlayerTouchingWater(PhysicsObject playerObject)
-    {
-        foreach (GameObject obj in Game.Instance.GetObjects(obj => obj is PhysicsObject))
-        {
-            PhysicsObject physicsObj = (PhysicsObject)obj;
-
-            if (physicsObj.Tag != null && physicsObj.Tag.ToString() == "Water")
-            {
-                if (physicsObj.IsInside(playerObject.Position))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }

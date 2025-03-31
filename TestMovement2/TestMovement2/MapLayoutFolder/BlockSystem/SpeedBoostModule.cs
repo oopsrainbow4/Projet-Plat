@@ -7,8 +7,8 @@ namespace TestMovement2.MapLayoutFolder.BlockSystem;
 public static class SpeedBoostModule
 {
     private static readonly double SpeedBoostAmount = 500;  // Adjust as needed
-    private static readonly double BoostDuration = 0.5; // How long the boost lasts
-    private static readonly double AccelerationRate = 100.0; // How much speed increases per step
+    private static readonly double BoostDuration = 0.5; // How long the boost lasts in second
+    private static readonly double AccelerationRate = 150.0; // How much speed increases per step
     private static readonly double DecelerationRate = 200.0; // Slow down speed per step
 
     private static readonly Dictionary<PhysicsObject, Timer> activeBoosts = new();

@@ -9,6 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +124,8 @@
       <workItem from="1740937448403" duration="749000" />
       <workItem from="1741443666244" duration="15000" />
       <workItem from="1742056545603" duration="1677000" />
+      <workItem from="1742132355091" duration="514000" />
+      <workItem from="1742142098406" duration="124000" />
     </task>
     <servers />
   </component>

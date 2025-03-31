@@ -19,7 +19,7 @@ public static class SoundModule
         LoadSound(SoundData.Ouch, "SoundEffects/Ouch.wav", 1.0);
         LoadSound(SoundData.HealingBox, "SoundEffects/TF2_Medkit.wav", 0.75);
         LoadSound(SoundData.JumpPad, "SoundEffects/GravityCoil.wav", 1.0);
-        LoadSound(SoundData.SpeedBoost, "SoundEffects/SonicSpinDash.wav", 1.0);
+        LoadSound(SoundData.SpeedBoost, "SoundEffects/SonicSpinDash.wav", 0.8);
     }
 
     /// <summary>
