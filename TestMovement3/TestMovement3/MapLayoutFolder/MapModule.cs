@@ -79,6 +79,7 @@ public class MapModule
                        'w' => BlockModule.BlockType.Water,
                        's' => BlockModule.BlockType.SpeedBoost,
                        'j' => BlockModule.BlockType.JumpPad,
+                       'c' => BlockModule.BlockType.Checkpoint,
                        'S' => null, // Player spawn
                        _ => null 
                    }; 

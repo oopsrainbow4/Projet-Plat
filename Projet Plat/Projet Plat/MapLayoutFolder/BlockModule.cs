@@ -19,7 +19,8 @@ public class BlockModule
         Spike,
         Water,
         SpeedBoost,
-        JumpPad
+        JumpPad,
+        Checkpoint
     }
 
     public static readonly Dictionary<BlockType, (string Tag, Image Image, Shape Shape,
@@ -31,6 +32,7 @@ public class BlockModule
         { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) },
         { BlockType.Water, ("Water", ImageModule.WaterImage, Shape.Rectangle, blockWidth, blockHeight) },
         { BlockType.SpeedBoost, ("SpeedBoost", ImageModule.SpeedBoostImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.JumpPad, ("JumpPad", ImageModule.JumpPadImage, Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5) }
+        { BlockType.JumpPad, ("JumpPad", ImageModule.JumpPadImage, Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5) },
+        { BlockType.Checkpoint, ("Checkpoint", ImageModule.RedFlagImage, Shape.Rectangle, blockWidth, blockHeight) }
     };
 }

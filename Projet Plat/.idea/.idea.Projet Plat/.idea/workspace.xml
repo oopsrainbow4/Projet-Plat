@@ -8,6 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/CheckpointImages/Green_Flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/CheckpointImages/Red_Flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/SoundEffects/RobloxBassSFX.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockSystem/CheckpointModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/ImageModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/ImageModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapLayout.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/Respawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="8d296318-e99e-4d14-91b4-1368a73b31c1" name="Changes by gr301851" comment="" />
@@ -111,6 +127,8 @@
       <workItem from="1740937456024" duration="754000" />
       <workItem from="1742056558745" duration="1662000" />
       <workItem from="1742132365498" duration="506000" />
+      <workItem from="1743424113227" duration="262000" />
+      <workItem from="1743999403782" duration="10000" />
     </task>
     <servers />
   </component>

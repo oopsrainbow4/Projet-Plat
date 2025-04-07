@@ -8,12 +8,11 @@ namespace Projet_Plat.MapLayoutFolder;
 public class CreateBlock
 {
     private readonly PhysicsGame game;
-
     public CreateBlock(PhysicsGame gameInstance)
     {
         game = gameInstance; 
     }
-
+    
     /// <summary>
     /// Creates a block of the specified type at the given position.
     /// </summary>
@@ -24,7 +23,8 @@ public class CreateBlock
         // Special cases for certain blocks
         if (blockType == BlockModule.BlockType.HealingBox ||
             blockType == BlockModule.BlockType.SpeedBoost ||
-            blockType == BlockModule.BlockType.JumpPad)
+            blockType == BlockModule.BlockType.JumpPad ||
+            blockType == BlockModule.BlockType.Checkpoint)
         { 
             // Removes bump effect so player get stop like hit a wall
             block.IgnoresCollisionResponse = true;

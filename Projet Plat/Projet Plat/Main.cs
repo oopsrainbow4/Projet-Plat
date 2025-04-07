@@ -23,6 +23,7 @@ public class Main : PhysicsGame
     private MapModule mapModule;
     private MapLayout mapLayout;
     
+    private Respawn respawnSystem;
     public override void Begin()
     {
         // Initialize the map layout system
@@ -46,6 +47,10 @@ public class Main : PhysicsGame
         // Initialize movement system with the player's object
         movementMain = new MovementMain(createPlayer.GetPlayerObject(), this);
         
+        // Initialize respawn logic
+        Respawn respawn = new Respawn(createPlayer.GetPlayerObject(), createPlayer.playerHP, createPlayer.playerLives, spawnPoint);
+        respawn.StartRespawnTimer();
+                
         // Load all sounds at the start of the game
         SoundModule.LoadSounds();
 
@@ -53,9 +58,9 @@ public class Main : PhysicsGame
         environment = new Environment();
         environment.Setup(this); // Adds gravity and background 
         environment.SetPlayer(createPlayer.GetPlayerObject());
-            
+        
         // Set up collision events from the player
-        movementMain.SetupCollisionEvents(createPlayer.GetPlayerObject(), createPlayer.playerHP);
+        movementMain.SetupCollisionEvents(createPlayer.GetPlayerObject(), createPlayer.playerHP, respawn);
 
         // Start deceleration logic and controls
         movementMain.SetupControls();
@@ -66,8 +71,6 @@ public class Main : PhysicsGame
         cameraSetup.SetupCamera(); // Attach the camera to the player
         cameraSetup.SetZoom(0.5);  // Optional: Adjust the zoom level
         
-        // Initialize respawn logic
-        Respawn respawn = new Respawn(createPlayer.GetPlayerObject(), createPlayer.playerHP, spawnPoint);
-        respawn.StartRespawnTimer();
+        
     }
 }

@@ -10,8 +10,10 @@ public class CreatePlayer
 {
     private PhysicsObject player;
     public IntMeter playerHP;
+    public IntMeter playerLives;
 
     public const int MAX_HP = 5;
+    public const int MAX_LIVES = 5;
 
     public void Setup(Game game, Vector spawnPosition)
     {
@@ -25,7 +27,7 @@ public class CreatePlayer
         player.Mass = 1;
         player.Restitution = 0.2; // Slight bounce
         player.Tag = "Player";
-        game.Add(player, 1);
+        game.Add(player,1);
 
         // Initialize player's HP
         playerHP = new IntMeter(MAX_HP, 0, MAX_HP); // 5 max HP, minimum 0
@@ -34,7 +36,7 @@ public class CreatePlayer
         Label hpLabel = new Label
         {
             TextColor = Color.Black,
-            Position = new Vector(300, 300),
+            Position = new Vector(300, 260),
             Text = "HP: " + playerHP.Value
         };
         game.Add(hpLabel);
@@ -44,10 +46,24 @@ public class CreatePlayer
         {
             hpLabel.Text = "HP: " + playerHP.Value;
         };
-    }
+        
+        // Initialize player's Lives
+        playerLives = new IntMeter(MAX_LIVES, 0, MAX_LIVES);
+        
+        // Add Lives display (GUI)
+        Label livesLabel = new Label
+        {
+            TextColor = Color.Black,
+            Position = new Vector(300, 300),
+            Text = "Lives: " + playerLives.Value
+        };
+        game.Add(livesLabel);
 
-    public PhysicsObject GetPlayerObject()
-    {
-        return player;
+        // Update the GUI whenever Lives changes
+        playerLives.Changed += delegate
+        {
+            livesLabel.Text = "Lives: " + playerLives.Value;
+        };
     }
+    public PhysicsObject GetPlayerObject() => player;
 }

@@ -4,22 +4,38 @@ using Vector = Jypeli.Vector;
 namespace Projet_Plat.PlayerSetup;
 
 /// <summary>
-/// Handles respawn logic, including checking player HP and position.
+/// Handles player respawn logic when they lose all HP or fall off the map.
+/// Restores player HP, subtracts a life, and moves them back to the latest checkpoint or spawn.
+/// Shows Game Over and disables player movement if lives reach zero.
 /// </summary>
 public class Respawn
 {
     private readonly PhysicsObject player;
     private readonly IntMeter playerHP;
-    private readonly Vector spawnPoint;
+    private readonly IntMeter playerLives;
+    private Vector spawnPoint;
     private Timer respawnTimer;
 
-    public Respawn(PhysicsObject player, IntMeter playerHP, Vector spawnPoint)
+    /// <summary>
+    /// Constructor for Respawn class.
+    /// </summary>
+    /// <param name="player">The player's PhysicsObject</param>
+    /// <param name="playerHP">The player's HP meter</param>
+    /// <param name="playerLives">The player's lives meter</param>
+    /// <param name="spawnPoint">Current active respawn point</param>
+    public Respawn(PhysicsObject player, IntMeter playerHP, IntMeter playerLives,Vector spawnPoint)
     {
         this.player = player;
         this.playerHP = playerHP;
+        this.playerLives = playerLives;
         this.spawnPoint = spawnPoint;
     }
 
+    /// <summary>
+    /// Starts a repeating timer to check if the player should be respawned.
+    /// Called in Main.cs when the game starts.
+    /// </summary>
+    /// <param name="interval">How often to check (default 0.1 seconds)</param>
     public void StartRespawnTimer(double interval = 0.1)
     {
         respawnTimer = new Timer{ Interval = interval }; // Set timer interval
@@ -27,6 +43,10 @@ public class Respawn
         respawnTimer.Start();
     }
 
+    /// <summary>
+    /// Checks if player is dead (HP = 0) or has fallen below the map.
+    /// If so, calls the RespawnPlayer() function.
+    /// </summary>
     private void CheckRespawnConditions()
     {
         // Check if the player needs to be respawned
@@ -36,18 +56,42 @@ public class Respawn
         }
     }
 
+    /// <summary>
+    /// Handles the logic for respawning the player.
+    /// If the player has lives left, restore HP and move them to the spawn.
+    /// If no lives left, stop movement and show Game Over.
+    /// </summary>
     private void RespawnPlayer()
     {
-        player.Position = spawnPoint; // Reset position to spawn point
-        player.Velocity = Vector.Zero; // Stop movement
-        playerHP.Value = CreatePlayer.MAX_HP; // Restore HP
+        if (playerLives.Value > 0)
+        {
+            player.Position = spawnPoint; // Reset position to spawn point
+            player.Velocity = Vector.Zero; // Stop movement
+            playerHP.Value = CreatePlayer.MAX_HP; // Restore HP
+            playerLives.Value--; // Lose one life
+        }
+        else
+        {
+            GameOver();
+        }
     }
 
     /// <summary>
-    /// No longer need to monitor respawn conditions, such as during game over, level transitions, or cutscenes.
-    /// Temporarily pause respawn monitoring, such as during invincibility or when the game is paused.
-    ///
-    /// I leave there just in case if I need it or not.
+    /// Disables player movement and shows Game Over text.
+    /// Called when the player has no more lives left.
+    /// </summary>
+    private void GameOver()
+    {
+        player.Velocity = Vector.Zero;
+        player.Stop();
+        player.IgnoresPhysicsLogics = true; // Stops gravity, movement, etc.
+        Game.Instance.MessageDisplay.Add("Game Over :)"); // Show Game Over message
+        StopRespawnTimer();
+    }
+
+    /// <summary>
+    /// Stops the timer that checks for respawn.
+    /// Useful if you want to pause it during cutscenes, game pause, or after Game Over.
     /// </summary>
     public void StopRespawnTimer()
     {
@@ -56,5 +100,11 @@ public class Respawn
             respawnTimer.Stop();
             respawnTimer = null;
         }
+    }
+    
+    // Allows checkpoint to change spawn position
+    public void SetSpawnPoint(Vector newSpawnPoint)
+    {
+        spawnPoint = newSpawnPoint;
     }
 }

@@ -20,4 +20,8 @@ public static class ImageModule
     
     public static readonly Image SpeedBoostImage = Game.LoadImage("Images/MapLayoutImages/SpeedBoost.png");
     public static readonly Image JumpPadImage = Game.LoadImage("Images/MapLayoutImages/JumpPad.png");
+    
+    // Load Checkpoint's block Images
+    public static readonly Image RedFlagImage = Game.LoadImage("Images/CheckpointImages/Red_Flag.png");
+    public static readonly Image GreenFlagImage = Game.LoadImage("Images/CheckpointImages/Green_Flag.png");
 }

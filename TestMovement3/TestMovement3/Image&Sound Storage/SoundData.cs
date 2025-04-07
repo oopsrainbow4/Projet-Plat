@@ -10,4 +10,7 @@ public static class SoundData
     public const string HealingBox = "HealingBox";
     public const string JumpPad = "JumpPad";
     public const string SpeedBoost = "SpeedBoost";
+    
+    // Checkpoint's sound effect.
+    public const string Checkpoint = "Checkpoint";
 }

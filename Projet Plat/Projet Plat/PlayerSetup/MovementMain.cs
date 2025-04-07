@@ -24,7 +24,7 @@ public partial class MovementMain
     private bool isJumpKeyReleased;      // To ensure the jump key isn't held down
     private bool isOnGround;             // Tracks whether the player is grounded
     private bool isOnJumpPad;
-    
+
     /// <summary>
     /// Initializes the Movement class with references to the player object and the game instance.
     /// </summary>

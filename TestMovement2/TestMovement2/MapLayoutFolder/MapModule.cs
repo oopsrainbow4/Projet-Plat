@@ -57,8 +57,8 @@ public class MapModule
             for (int x = 0; x < line.Length; x++)
             {
                 char tile = line[x];
-                double posX = x * blockWidth - (layout[0].Length * blockWidth / 2);
-                double posY = -(y * blockHeight - (layout.Length * blockHeight / 2));
+                double posX = x * blockWidth - layout[0].Length * blockWidth / 2;
+                double posY = -(y * blockHeight - layout.Length * blockHeight / 2);
                 
                 if (tile == 'S')
                 {
@@ -79,6 +79,7 @@ public class MapModule
                        'w' => BlockModule.BlockType.Water,
                        's' => BlockModule.BlockType.SpeedBoost,
                        'j' => BlockModule.BlockType.JumpPad,
+                       'c' => BlockModule.BlockType.Checkpoint,
                        'S' => null, // Player spawn
                        _ => null 
                    }; 

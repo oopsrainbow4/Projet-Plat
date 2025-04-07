@@ -21,7 +21,7 @@ public partial class MovementMain
     /// </summary>
     /// <param name="playerObject">The player's PhysicsObject.</param>
     /// <param name="playerHP"></param>
-    public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP)
+    public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP, Respawn respawnSystem)
     {
         // Centralized tags for collision objects
         string[] layoutTags = BlockModule.BlockInfo.Values.Select(info => info.Tag).ToArray();
@@ -80,6 +80,10 @@ public partial class MovementMain
                             break;
                         case "JumpPad":
                             isOnJumpPad = true;
+                            break;
+                        case "Checkpoint":
+                            if (target is PhysicsObject checkpointBlock)
+                                CheckpointModule.HandleCheckpointCollision(this, checkpointBlock, respawnSystem);
                             break;
                     } 
                 }

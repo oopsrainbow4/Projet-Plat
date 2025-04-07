@@ -14,15 +14,16 @@ public class MapLayout
     /// "w" Water
     /// "s" SpeedBoost
     /// "j" JumpPad
+    /// "c" Checkpoint
     public string[] GetLayout()
     {
         return
         [
-            "                            S ",
-            "                                                  ",
-            "                           +        ",
+            "                            S         c     L      c  ",
+            "                                 #####################    ",
+            "                           +     ",
             "   E                       ##                     ",
-            "       s  j     +     L   ##  #^#              s   ",
+            "       s  j     +     L   ##  #^#              s            c ",
             "############wwwwwww####################^^####################################### ",
             "        ####wwwwwwww#########",
             "            wwwwwww"
