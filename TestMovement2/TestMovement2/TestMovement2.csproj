@@ -118,6 +118,14 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Content\SoundEffects\RobloxBassSFX.wav" />
+      <None Remove="Content\Images\CheckpointImages\Checkpoint_flag.png" />
+      <Content Include="Content\Images\CheckpointImages\Checkpoint_Flag.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\CheckpointImages\Non_Checkpoint_flag.png" />
+      <Content Include="Content\Images\CheckpointImages\Non_Checkpoint_Flag.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

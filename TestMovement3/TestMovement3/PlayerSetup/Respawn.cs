@@ -65,7 +65,7 @@ public class Respawn
     {
         if (playerLives.Value > 0)
         {
-            player.Position = spawnPoint; // Reset position to spawn point
+            player.Position = spawnPoint + new Vector(0, 10); // Reset position to spawn point
             player.Velocity = Vector.Zero; // Stop movement
             playerHP.Value = CreatePlayer.MAX_HP; // Restore HP
             playerLives.Value--; // Lose one life

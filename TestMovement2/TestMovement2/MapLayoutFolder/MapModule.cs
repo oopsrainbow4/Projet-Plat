@@ -11,20 +11,12 @@ public class MapModule
     private readonly PhysicsGame game;
     private readonly CreateBlock createBlock;
     private Vector spawnPoint; // Store the spawn point coordinates
-    private readonly Dictionary<BlockModule.BlockType, Image> cachedImages; // Cache images
     private readonly List<Vector> enemyPositions = []; // Store enemy positions
     
     public MapModule(PhysicsGame gameInstance)
-    {
+    {   
         game = gameInstance;
-        createBlock = new CreateBlock(gameInstance);
-        cachedImages = new Dictionary<BlockModule.BlockType, Image>();
-
-        // Preload images to avoid repeated loading
-        foreach (var blockType in BlockModule.BlockInfo.Keys)
-        {
-            cachedImages[blockType] = BlockModule.BlockInfo[blockType].Image; // Use preloaded images
-        }
+        createBlock = new CreateBlock();
     }
 
     public List<Vector> GetEnemyPositions()
@@ -68,47 +60,27 @@ public class MapModule
                 {
                     enemyPositions.Add(new Vector(posX, posY)); // Store instead of spawning immediately
                 }
-                else
+                else if (BlockModule.SignToBlockType.TryGetValue(tile, out var blockType))
                 {
-                   BlockModule.BlockType? blockType = tile switch
-                   {
-                       '#' => BlockModule.BlockType.Land,
-                       '^' => BlockModule.BlockType.Spike,
-                       '+' => BlockModule.BlockType.HealingBox,
-                       'L' => BlockModule.BlockType.Lava,
-                       'w' => BlockModule.BlockType.Water,
-                       's' => BlockModule.BlockType.SpeedBoost,
-                       'j' => BlockModule.BlockType.JumpPad,
-                       'c' => BlockModule.BlockType.Checkpoint,
-                       'S' => null, // Player spawn
-                       _ => null 
-                   }; 
+                   var blockData = BlockModule.BlockInfo[blockType];
+                   var block = createBlock.CreateBlocks(posX, posY, blockType);
                    
-                   if (blockType.HasValue)
-                   { 
-                       if (blockType == BlockModule.BlockType.Land || 
-                         blockType == BlockModule.BlockType.Spike || 
-                         blockType == BlockModule.BlockType.Lava ||
-                         blockType == BlockModule.BlockType.Water) 
-                        {
-                            // Optimize by batching static blocks
-                            var block = createBlock.CreateBlockObject(posX, posY, blockType.Value, 
-                                cachedImages[blockType.Value]);
-                            staticBlocks.Add(block);
-                        }
-                        else
-                        {
-                            createBlock.CreateBlocks(posX, posY, blockType.Value, cachedImages[blockType.Value]); 
-                        }
-                   } 
+                   if (blockData.UsesBatching)
+                       staticBlocks.Add(block);
+                   else
+                       game.Add(block);
+                }
+                else if (!char.IsWhiteSpace(tile))
+                {
+                    game.MessageDisplay.Add($"Unknown symbol in map: '{tile}' at ({x},{y})");
                 }
             }
         }
+        
         // Loop through all pre-created static blocks and add them to the game world in bulk.
         // This improves performance by reducing individual object additions, which can cause lag.
         foreach (var block in staticBlocks)
-        {
             game.Add(block);
-        }
+        
     }
 }

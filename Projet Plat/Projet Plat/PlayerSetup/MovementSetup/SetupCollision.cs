@@ -60,7 +60,11 @@ public partial class MovementMain
                             SpikeModule.HandleSpikeCollision(this, playerObject, playerHP, target);
                             break;
                         case "Lava":
-                            if (!isInvincible) playerHP.Value -= 10;
+                            if (!isInvincible)
+                            {
+                                playerHP.Value -= 10;
+                                ActivateInvincibility(); // Prevent further instant damage
+                            }
                             break;
                         case "Water":
                             if (!isInWater) // Avoid applying effects multiple times

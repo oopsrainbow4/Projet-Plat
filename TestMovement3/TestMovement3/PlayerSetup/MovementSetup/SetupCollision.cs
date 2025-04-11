@@ -15,12 +15,13 @@ public partial class MovementMain
     private Timer invincibilityTimer;  // Timer to handle invincibility duration
     private bool isInWater;     // Tracks if the player is inside water
     private Timer waterEffectTimer;
-    
+
     /// <summary>
     /// Sets up collision events for the player and the floor.
     /// </summary>
     /// <param name="playerObject">The player's PhysicsObject.</param>
     /// <param name="playerHP"></param>
+    /// <param name="respawnSystem"></param>
     public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP, Respawn respawnSystem)
     {
         // Centralized tags for collision objects
@@ -60,7 +61,11 @@ public partial class MovementMain
                             SpikeModule.HandleSpikeCollision(this, playerObject, playerHP, target);
                             break;
                         case "Lava":
-                            if (!isInvincible) playerHP.Value -= 10;
+                            if (!isInvincible)
+                            {
+                                playerHP.Value -= 10;
+                                ActivateInvincibility(); // Prevent further instant damage
+                            }
                             break;
                         case "Water":
                             if (!isInWater) // Avoid applying effects multiple times

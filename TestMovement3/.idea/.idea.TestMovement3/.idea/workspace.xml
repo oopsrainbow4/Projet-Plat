@@ -8,23 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da644fe-602b-4221-8732-b672087c3fba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/CheckpointImages/Green_Flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/Images/CheckpointImages/Red_Flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Content/SoundEffects/RobloxBassSFX.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockSystem/CheckpointModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/BlockData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet Plat/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/ImageModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/ImageModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Image&amp;Sound Storage/SoundModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/Main.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/BlockModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapLayout.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/MapLayoutFolder/MapModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/CreatePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/PlayerSetup/Respawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement2/TestMovement2/TestMovement2.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/CreateBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/CreateBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/MapLayoutFolder/MapModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/SetupCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/MovementSetup/SetupCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Respawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMovement3/PlayerSetup/Respawn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +140,9 @@
       <workItem from="1743424104764" duration="275000" />
       <workItem from="1743999303479" duration="17000" />
       <workItem from="1743999341744" duration="69000" />
+      <workItem from="1744041005419" duration="1440000" />
+      <workItem from="1744203369490" duration="531000" />
+      <workItem from="1744205641613" duration="349000" />
     </task>
     <servers />
   </component>

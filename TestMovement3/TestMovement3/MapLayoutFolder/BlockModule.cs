@@ -22,17 +22,40 @@ public class BlockModule
         JumpPad,
         Checkpoint
     }
-
-    public static readonly Dictionary<BlockType, (string Tag, Image Image, Shape Shape,
-        double Width, double Height)> BlockInfo = new()
+    
+    public static readonly Dictionary<BlockType, BlockData> BlockInfo = new()
     {
-        { BlockType.Land, ("Block", ImageModule.BlockImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.Lava, ("Lava", ImageModule.LavaImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.HealingBox, ("HealingBox", ImageModule.HealingBoxImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.Spike, ("Spike", ImageModule.SpikeImage, Shape.Triangle, blockWidth, blockHeight) },
-        { BlockType.Water, ("Water", ImageModule.WaterImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.SpeedBoost, ("SpeedBoost", ImageModule.SpeedBoostImage, Shape.Rectangle, blockWidth, blockHeight) },
-        { BlockType.JumpPad, ("JumpPad", ImageModule.JumpPadImage, Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5) },
-        { BlockType.Checkpoint, ("Checkpoint", ImageModule.RedFlagImage, Shape.Rectangle, blockWidth, blockHeight) }
+        { BlockType.Land, new('#',"Block", ImageModule.BlockImage, Shape.Rectangle,
+            blockWidth, blockHeight, false, true) },
+        
+        { BlockType.Lava, new('L',"Lava", ImageModule.LavaImage, Shape.Rectangle, 
+            blockWidth, blockHeight, false, true) },
+        
+        { BlockType.HealingBox, new('+',"HealingBox", ImageModule.HealingBoxImage, 
+            Shape.Rectangle, blockWidth, blockHeight, true, false) },
+        
+        { BlockType.Spike, new('^',"Spike", ImageModule.SpikeImage, Shape.Triangle, 
+            blockWidth, blockHeight, false, true) },
+        
+        { BlockType.Water, new('w',"Water", ImageModule.WaterImage, Shape.Rectangle, 
+            blockWidth, blockHeight, true, true) },
+        
+        { BlockType.SpeedBoost, new('s',"SpeedBoost", ImageModule.SpeedBoostImage, 
+            Shape.Rectangle, blockWidth, blockHeight, true, false) },
+        
+        { BlockType.JumpPad, new('j',"JumpPad", ImageModule.JumpPadImage, Shape.Rectangle, 
+            blockWidth * 1.5, blockHeight * 1.5, true, false) },
+        
+        { BlockType.Checkpoint, new('c',"Checkpoint", ImageModule.RedFlagImage, 
+            Shape.Rectangle, blockWidth, blockHeight, true, false) }
     };
+    
+    public static readonly Dictionary<char, BlockType> SignToBlockType = new();
+    static BlockModule()
+    {
+        foreach (var pair in BlockInfo)
+        {
+            SignToBlockType[pair.Value.Sign] = pair.Key;
+        }
+    }
 }

@@ -18,10 +18,9 @@ public static class CheckpointModule
     /// Called when the player touches a checkpoint.
     /// Changes the flag color, plays a sound, and updates the respawn location.
     /// </summary>
-    /// <param name="playerMain">Reference to the MovementMain class that holds the respawn position.</param>
     /// <param name="checkpointBlock">The checkpoint block the player touched.</param>
     /// <param name="respawnSystem">The respawn system to update spawn point</param>
-    public static void HandleCheckpointCollision(MovementMain playerMain, PhysicsObject checkpointBlock, Respawn respawnSystem)
+    public static void HandleCheckpointCollision(PhysicsObject checkpointBlock, Respawn respawnSystem)
     {
         // Do nothing if this checkpoint is already active
         if (checkpointBlock == activeCheckpoint)
