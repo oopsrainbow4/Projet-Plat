@@ -9,7 +9,7 @@ public class BlockData
 {
     public readonly char Sign; // The char in the map layout
     public readonly string Tag;
-    public readonly Image Image;
+    public Image Image;
     public readonly Shape Shape;
     public readonly double Width;
     public readonly double Height;

@@ -1,5 +1,7 @@
 using Jypeli;
 using System.Collections.Generic;
+using System.Linq;
+using Projet_Plat.MapLayoutFolder.BlockSystem;
 
 namespace Projet_Plat.MapLayoutFolder;
 
@@ -19,6 +21,9 @@ public class MapModule
         createBlock = new CreateBlock();
     }
 
+    /// <summary>
+    /// Returns a list of all enemy spawn positions found in the map.
+    /// </summary>
     public List<Vector> GetEnemyPositions()
     {
         return enemyPositions;
@@ -33,51 +38,98 @@ public class MapModule
     }
     
     /// <summary>
-    /// Parses the layout and places objects in the game world.
+    /// Parses the string-based map layout and creates all blocks, enemies, and spawn points in the game.
     /// </summary>
-    /// <param name="layout">A string array representing the map layout.</param>
+    /// <param name="layout">A string array representing each row of the map layout.</param>
     public void GenerateMap(string[] layout)
     {
         double blockWidth = 64;
         double blockHeight = 64;
 
-        List<PhysicsObject> staticBlocks = new List<PhysicsObject>(); // Batch static blocks
+        // Stores all static blocks for bulk insertion at the end
+        List<PhysicsObject> staticBlocks = new List<PhysicsObject>(); 
+        
+        // Reason: The MapLayout's string length are different in x-axis that cause the confusion for programming.
+        
+        // Find the maximum line length to prevent index errors
+        int maxWidth = layout.Max(line => line.Length);
+        
+        // 🔧 Auto-pad all rows to match the longest one
+        for (int i = 0; i < layout.Length; i++)
+            layout[i] = layout[i].PadRight(maxWidth, ' '); // Add spaces to short rows
 
+        // Convert string[] layout to char[,] for easier 2D indexing (e.g., check tiles above (GrassModule.cs))
+        char[,] layoutGrid = new char[layout.Length, maxWidth];
+        for (int y = 0; y < layout.Length; y++)
+        {
+            for (int x = 0; x < layout[y].Length; x++)
+            {
+                layoutGrid[y, x] = layout[y][x];
+            }
+        }
+        // Solution: By add more space ' ' until it match same length as max length per row. 
+        
+        // Loop through the entire map layout grid
         for (int y = 0; y < layout.Length; y++)
         {
             string line = layout[y];
             for (int x = 0; x < line.Length; x++)
             {
                 char tile = line[x];
-                double posX = x * blockWidth - layout[0].Length * blockWidth / 2;
+                
+                // Convert tile coordinates to game world coordinates
+                double posX = x * blockWidth - maxWidth * blockWidth / 2;
                 double posY = -(y * blockHeight - layout.Length * blockHeight / 2);
                 
-                if (tile == 'S')
+                // Handle special symbols in the layout
+                if (tile == 'S') // Player spawn point
                 {
                     spawnPoint = new Vector(posX, posY);
                 }
-                else if (tile == 'E') 
+                else if (tile == 'E') // Enemy spawn point
                 {
                     enemyPositions.Add(new Vector(posX, posY)); // Store instead of spawning immediately
                 }
                 else if (BlockModule.SignToBlockType.TryGetValue(tile, out var blockType))
                 {
-                   var blockData = BlockModule.BlockInfo[blockType];
-                   var block = createBlock.CreateBlocks(posX, posY, blockType);
-                   
-                   if (blockData.UsesBatching)
-                       staticBlocks.Add(block);
-                   else
-                       game.Add(block);
+                    // Special logic for Land blocks (dirt or grass)
+                    if (blockType == BlockModule.BlockType.Land)
+                    {
+                        // Determine whether to use grass or dirt image
+                        var image = GrassModule.SetLandBlockImage(layoutGrid, x, y);
+
+                        // Temporarily override the image for the Land block
+                        var originalImage = BlockModule.BlockInfo[blockType].Image;
+                        BlockModule.BlockInfo[blockType].Image = image;
+
+                        var block = createBlock.CreateBlocks(posX, posY, blockType);
+                        BlockModule.BlockInfo[blockType].Image = originalImage; // Restore image for future blocks
+
+                        if (BlockModule.BlockInfo[blockType].UsesBatching)
+                            staticBlocks.Add(block);
+                        else
+                            game.Add(block);
+                    }
+                    else
+                    {
+                        // Normal block creation for all other block types
+                        var block = createBlock.CreateBlocks(posX, posY, blockType);
+                                            
+                        if (BlockModule.BlockInfo[blockType].UsesBatching) 
+                            staticBlocks.Add(block);
+                        else
+                            game.Add(block);
+                    }
                 }
                 else if (!char.IsWhiteSpace(tile))
                 {
+                    // Warn about unknown characters in the layout
                     game.MessageDisplay.Add($"Unknown symbol in map: '{tile}' at ({x},{y})");
                 }
             }
         }
         
-        // Loop through all pre-created static blocks and add them to the game world in bulk.
+        // Add all batched static blocks to the game at once for better performance
         // This improves performance by reducing individual object additions, which can cause lag.
         foreach (var block in staticBlocks)
             game.Add(block);

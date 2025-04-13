@@ -25,7 +25,7 @@ public class BlockModule
     
     public static readonly Dictionary<BlockType, BlockData> BlockInfo = new()
     {
-        { BlockType.Land, new('#',"Block", ImageModule.BlockImage, Shape.Rectangle,
+        { BlockType.Land, new('#',"Block", ImageModule.DirtImage, Shape.Rectangle,
             blockWidth, blockHeight, false, true) },
         
         { BlockType.Lava, new('L',"Lava", ImageModule.LavaImage, Shape.Rectangle, 

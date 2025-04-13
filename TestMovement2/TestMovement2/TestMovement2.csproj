@@ -119,11 +119,17 @@
       </Content>
       <None Remove="Content\SoundEffects\RobloxBassSFX.wav" />
       <None Remove="Content\Images\CheckpointImages\Checkpoint_flag.png" />
-      <Content Include="Content\Images\CheckpointImages\Checkpoint_Flag.png">
+      <None Remove="Content\Images\CheckpointImages\Non_Checkpoint_flag.png" />
+      <None Remove="Content\Images\CheckpointImages\Green_Flag2.png" />
+      <Content Include="Content\Images\CheckpointImages\Green_Flag2.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <None Remove="Content\Images\CheckpointImages\Non_Checkpoint_flag.png" />
-      <Content Include="Content\Images\CheckpointImages\Non_Checkpoint_Flag.png">
+      <None Remove="Content\Images\CheckpointImages\Red_Flag2.png" />
+      <Content Include="Content\Images\CheckpointImages\Red_Flag2.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\Dirt.png" />
+      <Content Include="Content\Images\MapLayoutImages\Dirt.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
