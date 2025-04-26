@@ -23,6 +23,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="Content\Soundtracks\TheTixHasReturned.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <None Remove="Content\PlayerImages\Yellow.png" />
       <None Remove="Content\BackgroundImages\Background.png" />
       <None Remove="Content\BackgroundImages\Background2.png" />
@@ -132,10 +135,6 @@
       <Content Include="Content\Images\MapLayoutImages\Dirt.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Content\Soundtracks\" />
     </ItemGroup>
 
 </Project>

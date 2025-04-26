@@ -5,12 +5,14 @@ namespace TestMovement2.Image_Sound_Storage;
 /// </summary>
 public static class SoundData
 {
+    // Load sound effects
     public const string Jump = "Jump";
     public const string Ouch = "Ouch";
     public const string HealingBox = "HealingBox";
     public const string JumpPad = "JumpPad";
     public const string SpeedBoost = "SpeedBoost";
-    
-    // Checkpoint's sound effect.
     public const string Checkpoint = "Checkpoint";
+    
+    // Load background music
+    public const string BackgroundMusic = "BackgroundMusic";
 }

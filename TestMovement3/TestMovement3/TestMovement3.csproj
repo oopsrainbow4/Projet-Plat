@@ -106,10 +106,10 @@
       <Content Include="Content\Images\CheckpointImages\Green_Flag2.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Content\Soundtracks\" />
+      <None Remove="Content\Soundtracks\TheTixHasReturned.wav" />
+      <Content Include="Content\Soundtracks\TheTixHasReturned.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

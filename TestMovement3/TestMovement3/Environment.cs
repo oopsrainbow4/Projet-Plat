@@ -30,6 +30,9 @@ public class Environment
 
         // Start the timer that updates the background position based on the player's movement.
         StartBackgroundUpdateTimer();
+        
+        // Play background music
+        SoundModule.PlayBackgroundMusic(SoundData.BackgroundMusic);
     }
 
     /// <summary>

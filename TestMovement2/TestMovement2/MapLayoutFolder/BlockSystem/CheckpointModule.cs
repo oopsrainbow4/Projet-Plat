@@ -34,7 +34,7 @@ public static class CheckpointModule
         // Set the new checkpoint image to green and mark it as active
         checkpointBlock.Image = ImageModule.GreenFlagImage;
         activeCheckpoint = checkpointBlock;
-
+        
         // Update the player's respawn point to this checkpoint's position
         respawnSystem.SetSpawnPoint(checkpointBlock.Position);
 
