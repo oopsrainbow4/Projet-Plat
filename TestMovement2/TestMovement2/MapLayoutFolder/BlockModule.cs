@@ -20,7 +20,8 @@ public class BlockModule
         Water,
         SpeedBoost,
         JumpPad,
-        Checkpoint
+        Checkpoint,
+        Stone
     }
     
     public static readonly Dictionary<BlockType, BlockData> BlockInfo = new()
@@ -47,7 +48,10 @@ public class BlockModule
             blockWidth * 1.5, blockHeight * 1.5, true, false) },
         
         { BlockType.Checkpoint, new('c',"Checkpoint", ImageModule.RedFlagImage, 
-            Shape.Rectangle, blockWidth, blockHeight, true, false) }
+            Shape.Rectangle, blockWidth, blockHeight, true, false) },
+        
+        { BlockType.Stone, new('r',"Stone", ImageModule.StoneImage, 
+            Shape.Rectangle, blockWidth, blockHeight, false, true) }
     };
     
     public static readonly Dictionary<char, BlockType> SignToBlockType = new();

@@ -15,6 +15,8 @@ public class MapLayout
     /// "s" SpeedBoost
     /// "j" JumpPad
     /// "c" Checkpoint
+    /// "r" Stone
+    /// "E" End game's goal
     public string[] GetLayout()
     {
         return
@@ -23,7 +25,7 @@ public class MapLayout
             "                                 #####################    ",
             "                           +     ",
             "   E                       ##                     ",
-            "       s  j     +     L   ##  #^#              s            c ",
+            "       s  j     +     L   ##  #^#              s            c   rrrrrrrr",
             "############wwwwwww####################^^####################################### ",
             "        ####wwwwwwww#########",
             "            wwwwwww"

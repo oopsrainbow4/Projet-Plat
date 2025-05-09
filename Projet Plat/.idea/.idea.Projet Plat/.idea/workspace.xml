@@ -7,7 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="" />
+    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Projet Plat/Content/Images/MapLayoutImages/Stone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet Plat/Image&amp;Sound Storage/ImageModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/Image&amp;Sound Storage/ImageModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/BlockModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/BlockModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/MapLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/MapLayoutFolder/MapLayout.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet Plat/Projet Plat.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Projet Plat/Projet Plat.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMovement3/.idea/.idea.TestMovement3/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="8d296318-e99e-4d14-91b4-1368a73b31c1" name="Changes by gr301851" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +122,8 @@
       <workItem from="1744041134846" duration="1320000" />
       <workItem from="1744373898589" duration="738000" />
       <workItem from="1744516459401" duration="1534000" />
+      <workItem from="1745650713386" duration="786000" />
+      <workItem from="1746443123024" duration="1579000" />
     </task>
     <servers />
   </component>
