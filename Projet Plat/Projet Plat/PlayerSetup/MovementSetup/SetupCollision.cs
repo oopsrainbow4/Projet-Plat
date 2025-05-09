@@ -15,12 +15,13 @@ public partial class MovementMain
     private Timer invincibilityTimer;  // Timer to handle invincibility duration
     private bool isInWater;     // Tracks if the player is inside water
     private Timer waterEffectTimer;
-    
+
     /// <summary>
     /// Sets up collision events for the player and the floor.
     /// </summary>
     /// <param name="playerObject">The player's PhysicsObject.</param>
     /// <param name="playerHP"></param>
+    /// <param name="respawnSystem"></param>
     public void SetupCollisionEvents(PhysicsObject playerObject, IntMeter playerHP, Respawn respawnSystem)
     {
         // Centralized tags for collision objects
@@ -29,7 +30,7 @@ public partial class MovementMain
         // Initialize the invincibility timer
         invincibilityTimer = new Timer
         {
-            Interval = 2.0 // 2 seconds of invincibility
+            Interval = 1.0 // 1 second of invincibility
         };
         invincibilityTimer.Timeout += () => {isInvincible = false;}; // Turn off invincibility
         
@@ -88,6 +89,9 @@ public partial class MovementMain
                         case "Checkpoint":
                             if (target is PhysicsObject checkpointBlock)
                                 CheckpointModule.HandleCheckpointCollision(this, checkpointBlock, respawnSystem);
+                            break;
+                        case "FinnishFlag":
+                            FinnishFlagModule.TheEnd();
                             break;
                     } 
                 }

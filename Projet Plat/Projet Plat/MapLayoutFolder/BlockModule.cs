@@ -21,7 +21,8 @@ public class BlockModule
         SpeedBoost,
         JumpPad,
         Checkpoint,
-        Stone
+        Stone,
+        FinnishFlag
     }
     
     public static readonly Dictionary<BlockType, BlockData> BlockInfo = new()
@@ -51,7 +52,10 @@ public class BlockModule
             Shape.Rectangle, blockWidth, blockHeight, true, false) },
         
         { BlockType.Stone, new('r',"Stone", ImageModule.StoneImage, 
-            Shape.Rectangle, blockWidth, blockHeight, false, true) }
+            Shape.Rectangle, blockWidth, blockHeight, false, true) },
+        
+        { BlockType.FinnishFlag, new('F',"FinnishFlag", ImageModule.FinnishFlagImage, 
+            Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5, true, false) }
     };
     
     public static readonly Dictionary<char, BlockType> SignToBlockType = new();

@@ -22,8 +22,7 @@ public class Main : PhysicsGame
     
     private MapModule mapModule;
     private MapLayout mapLayout;
-    
-    private Respawn respawnSystem;
+
     public override void Begin()
     {
         // Initialize the map layout system

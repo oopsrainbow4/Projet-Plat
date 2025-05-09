@@ -6,10 +6,10 @@ using Projet_Plat.Image_Sound_Storage;
 namespace Projet_Plat.MapLayoutFolder.BlockSystem;
 public static class SpeedBoostModule
 {
-    private static readonly double SpeedBoostAmount = 500;  // Adjust as needed
-    private static readonly double BoostDuration = 0.5; // How long the boost lasts in second
-    private static readonly double AccelerationRate = 150.0; // How much speed increases per step
-    private static readonly double DecelerationRate = 200.0; // Slow down speed per step
+    private static readonly double SpeedBoostAmount = 900;  // Adjust as needed
+    private static readonly double BoostDuration = 3.0; // How long the boost lasts in second
+    private static readonly double AccelerationRate = 500.0; // How much speed increases per step
+    private static readonly double DecelerationRate = 50.0; // Slow down speed per step
 
     private static readonly Dictionary<PhysicsObject, Timer> activeBoosts = new();
 

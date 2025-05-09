@@ -11,6 +11,8 @@ public static class ImageModule
     public static readonly Image EnemyImage = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
     public static readonly Image BackgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
     
+    public static readonly Image FinnishFlagImage = Game.LoadImage("Images/MapLayoutImages/FinnishFlag.png");
+    
     // Load Block Images
     public static readonly Image LavaImage = Game.LoadImage("Images/MapLayoutImages/Lava.png");
     public static readonly Image HealingBoxImage = Game.LoadImage("Images/MapLayoutImages/HealingBox2.png");

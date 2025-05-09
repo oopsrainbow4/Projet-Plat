@@ -25,7 +25,8 @@ public class GrassModule
                 if (aboveType != BlockModule.BlockType.HealingBox &&
                     aboveType != BlockModule.BlockType.SpeedBoost &&
                     aboveType != BlockModule.BlockType.JumpPad &&
-                    aboveType != BlockModule.BlockType.Checkpoint)
+                    aboveType != BlockModule.BlockType.Checkpoint &&
+                    aboveType != BlockModule.BlockType.FinnishFlag)
                 {
                     isGrass = false;
                 }

@@ -16,19 +16,21 @@ public class MapLayout
     /// "j" JumpPad
     /// "c" Checkpoint
     /// "r" Stone
-    /// "E" End game's goal
+    /// "F" End game's goal (Finnish Flag)
     public string[] GetLayout()
     {
         return
         [
-            "                            S         c     L      c  ",
-            "                                 #####################    ",
-            "                           +     ",
-            "   E                       ##                     ",
-            "       s  j     +     L   ##  #^#              s            c   rrrrrrrr",
-            "############wwwwwww####################^^####################################### ",
-            "        ####wwwwwwww#########",
-            "            wwwwwww"
+            "                                                                                                                 ",
+            "                                              #                                                                                         ",
+            "                                              #                                                                                          ",
+            "                                              #                                                                                            ",
+            "                      ##                      #                                            ",
+            "                      ##                      #                                                           ",
+            "  S            ##     ##       ^^   +    j    #         c     LLL      c      s                 s                              E             +", 
+            "#######################################################################################################wwwwwwwwwwwwww############################# ",
+            "                                                                                                       wwwwwwwwwwwwww",
+            ""
         ];
     }
 }

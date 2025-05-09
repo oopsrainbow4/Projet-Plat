@@ -116,6 +116,14 @@
       <Content Include="Content\Images\MapLayoutImages\Stone.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\Images\MapLayoutImages\Finnish_Flag_Test.png" />
+      <Content Include="Content\Images\MapLayoutImages\Finnish_Flag_Test.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\MapLayoutImages\FinnishFlag.png" />
+      <Content Include="Content\Images\MapLayoutImages\FinnishFlag.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

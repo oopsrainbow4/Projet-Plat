@@ -14,7 +14,7 @@ public partial class MovementMain
     private Game game; 
     
     // Constants to control movement behavior
-    private readonly double MAX_SPEED = 900;       // Maximum horizontal speed
+    private readonly double MAX_SPEED = 500;       // Maximum horizontal speed
     private readonly double ACCELERATION_RATE = 20; // Speed increment when moving
     private double JUMP_HEIGHT = 500.0;    // Vertical jump height
     private const double DECELERATION_RATE = 10;    // Decelerate speed when stop moving
