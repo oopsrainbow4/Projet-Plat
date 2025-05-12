@@ -18,7 +18,7 @@ public class CreatePlayer
     public void Setup(Game game, Vector spawnPosition)
     {
         // Create the player (a block with width and height)
-        player = new PhysicsObject(64, 64); // Size of the block
+        player = new PhysicsObject(64, 100); // Size of the block
         player.Image = ImageModule.PlayerImage;
         
         // Set initial position to the spawn point

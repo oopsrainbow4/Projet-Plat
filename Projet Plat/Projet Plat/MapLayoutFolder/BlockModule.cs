@@ -22,7 +22,8 @@ public class BlockModule
         JumpPad,
         Checkpoint,
         Stone,
-        FinnishFlag
+        FinnishFlag,
+        Board
     }
     
     public static readonly Dictionary<BlockType, BlockData> BlockInfo = new()
@@ -55,7 +56,10 @@ public class BlockModule
             Shape.Rectangle, blockWidth, blockHeight, false, true) },
         
         { BlockType.FinnishFlag, new('F',"FinnishFlag", ImageModule.FinnishFlagImage, 
-            Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5, true, false) }
+            Shape.Rectangle, blockWidth * 1.5, blockHeight * 1.5, true, false) },
+        
+        { BlockType.Board, new('B',"Board", ImageModule.BoardImage, 
+            Shape.Rectangle, blockWidth * 5, blockHeight * 2, true, false) }
     };
     
     public static readonly Dictionary<char, BlockType> SignToBlockType = new();

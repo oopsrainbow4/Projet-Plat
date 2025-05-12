@@ -124,6 +124,22 @@
       <Content Include="Content\Images\MapLayoutImages\FinnishFlag.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Content\Images\MapLayoutImages\Board.png" />
+      <Content Include="Content\Images\MapLayoutImages\Board.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Soundtracks\DrawCatMusic.wav" />
+      <Content Include="Content\Soundtracks\DrawCatMusic.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\EnemyImages\Feral_Bunny.png" />
+      <Content Include="Content\Images\EnemyImages\Feral_Bunny.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Content\Images\PlayerImages\Bunny.png" />
+      <Content Include="Content\Images\PlayerImages\Bunny.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

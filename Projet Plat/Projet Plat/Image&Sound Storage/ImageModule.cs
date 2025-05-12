@@ -7,7 +7,7 @@ namespace Projet_Plat.Image_Sound_Storage;
 /// </summary>
 public static class ImageModule
 {
-    public static readonly Image PlayerImage = Game.LoadImage("Images/PlayerImages/Yellow.png");
+    public static readonly Image PlayerImage = Game.LoadImage("Images/PlayerImages/Bunny.png");
     public static readonly Image EnemyImage = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
     public static readonly Image BackgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
     
@@ -21,6 +21,7 @@ public static class ImageModule
     public static readonly Image SpeedBoostImage = Game.LoadImage("Images/MapLayoutImages/SpeedBoost.png");
     public static readonly Image JumpPadImage = Game.LoadImage("Images/MapLayoutImages/JumpPad.png");
     public static readonly Image StoneImage = Game.LoadImage("Images/MapLayoutImages/Stone.png");
+    public static readonly Image BoardImage = Game.LoadImage("Images/MapLayoutImages/Board.png");
     
     // Load Land Images
     public static readonly Image GrassImage = Game.LoadImage("Images/MapLayoutImages/Grass.png");

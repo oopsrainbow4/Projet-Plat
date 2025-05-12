@@ -30,8 +30,8 @@ public static class SoundModule
         LoadSound(SoundData.Checkpoint, "SoundEffects/RobloxBassSFX.wav", 1.0);
         
         // Load background music
-        LoadBackgroundMusic(SoundData.BackgroundMusic,"Soundtracks/TheTixHasReturned", 
-            0.25);
+        LoadBackgroundMusic(SoundData.BackgroundMusic,"Soundtracks/DrawCatMusic", 
+            1.0);
     }
 
     /// <summary>
