@@ -20,6 +20,7 @@ public class CreatePlayer
         // Create the player (a block with width and height)
         player = new PhysicsObject(64, 100); // Size of the block
         player.Image = ImageModule.PlayerImage;
+        player.CanRotate = false;
         
         // Set initial position to the spawn point
         player.X = spawnPosition.X;

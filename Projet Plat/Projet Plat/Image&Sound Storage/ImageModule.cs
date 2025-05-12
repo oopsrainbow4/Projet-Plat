@@ -8,7 +8,7 @@ namespace Projet_Plat.Image_Sound_Storage;
 public static class ImageModule
 {
     public static readonly Image PlayerImage = Game.LoadImage("Images/PlayerImages/Bunny.png");
-    public static readonly Image EnemyImage = Game.LoadImage("Images/EnemyImages/BasicEnemy.png");
+    public static readonly Image EnemyImage = Game.LoadImage("Images/EnemyImages/Feral_Bunny.png");
     public static readonly Image BackgroundImage = Game.LoadImage("Images/BackgroundImages/Background.png");
     
     public static readonly Image FinnishFlagImage = Game.LoadImage("Images/MapLayoutImages/FinnishFlag.png");

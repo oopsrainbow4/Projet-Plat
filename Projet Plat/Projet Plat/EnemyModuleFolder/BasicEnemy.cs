@@ -20,7 +20,7 @@ public class BasicEnemy : EnemyBase
     /// <param name="y">Initial Y position</param>
     /// <param name="data">Enemy data containing HP, speed, patrol range, and damage</param>
     /// <param name="player">Reference to the player object</param>
-    public BasicEnemy(double x, double y, EnemyData data, PhysicsObject player) : base(64, 64)
+    public BasicEnemy(double x, double y, EnemyData data, PhysicsObject player) : base(64, 100)
     {
         // Initialize position
         X = x;
