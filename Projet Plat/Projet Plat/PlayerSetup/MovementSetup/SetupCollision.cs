@@ -150,3 +150,4 @@ public partial class MovementMain
         player.Velocity = knockbackDirection * 600; // Apply knockback velocity (adjust the multiplier as needed)
     }
 }
+

@@ -91,3 +91,4 @@ public partial class MovementMain
         isJumpKeyReleased = true; // Allow jumping when the key is released
     }
 }
+

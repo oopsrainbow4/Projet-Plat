@@ -108,3 +108,4 @@ public class Respawn
         spawnPoint = newSpawnPoint;
     }
 }
+

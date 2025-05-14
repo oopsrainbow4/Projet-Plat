@@ -36,3 +36,4 @@ public class GrassModule
         return isGrass ? ImageModule.GrassImage : ImageModule.DirtImage;
     }
 }
+

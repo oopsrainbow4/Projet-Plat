@@ -23,3 +23,4 @@ public static class HealingBoxModule
         Timer.SingleShot(3.0, () => healingBox.Position = originalPosition);
     }
 }
+

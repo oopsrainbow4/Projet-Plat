@@ -57,3 +57,4 @@ public partial class MovementMain
         JUMP_HEIGHT = 500.0; // Reset jump height to normal
     }
 }
+

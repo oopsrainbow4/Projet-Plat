@@ -23,3 +23,4 @@ public static class EnemyManager
         return EnemyStats.ContainsKey(enemyType) ? EnemyStats[enemyType] : null;
     }
 }
+

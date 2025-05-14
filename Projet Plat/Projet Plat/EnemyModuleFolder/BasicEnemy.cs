@@ -98,3 +98,4 @@ public class BasicEnemy : EnemyBase
         Velocity = new Vector(Speed * direction, 0); // Move in the player's direction
     }
 }
+

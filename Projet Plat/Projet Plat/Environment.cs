@@ -96,3 +96,4 @@ public class Environment
         backgroundUpdateTimer.Start(); // Start the timer.
     }
 }
+

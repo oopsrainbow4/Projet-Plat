@@ -9,3 +9,4 @@ public class FinnishFlagModule
         Game.Instance.MessageDisplay.Add("You win!");
     }
 }
+

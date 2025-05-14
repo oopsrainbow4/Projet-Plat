@@ -10,3 +10,4 @@ public class EnemyData
     public int Damage { get; set; }
     public double PatrolRange { get; set; }
 }
+

@@ -26,3 +26,4 @@ public abstract class EnemyBase : PhysicsObject
         if (HP <= 0) Destroy();
     }
 }
+

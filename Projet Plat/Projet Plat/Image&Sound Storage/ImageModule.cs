@@ -31,3 +31,4 @@ public static class ImageModule
     public static readonly Image RedFlagImage = Game.LoadImage("Images/CheckpointImages/Red_Flag2.png");
     public static readonly Image GreenFlagImage = Game.LoadImage("Images/CheckpointImages/Green_Flag2.png");
 }
+

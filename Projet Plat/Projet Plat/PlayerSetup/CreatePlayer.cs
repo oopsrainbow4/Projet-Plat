@@ -13,12 +13,12 @@ public class CreatePlayer
     public IntMeter playerLives;
 
     public const int MAX_HP = 5;
-    public const int MAX_LIVES = 5;
+    public const int MAX_LIVES = 10;
 
     public void Setup(Game game, Vector spawnPosition)
     {
         // Create the player (a block with width and height)
-        player = new PhysicsObject(64, 100); // Size of the block
+        player = new PhysicsObject(56, 100); // Size of the block
         player.Image = ImageModule.PlayerImage;
         player.CanRotate = false;
         

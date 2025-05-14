@@ -107,3 +107,4 @@ public static class SpeedBoostModule
         return (boostDirection > 0 && player.Velocity.X < 0) || (boostDirection < 0 && player.Velocity.X > 0);
     }
 }
+

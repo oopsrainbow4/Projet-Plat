@@ -16,3 +16,4 @@ public static class SoundData
     // Load background music
     public const string BackgroundMusic = "BackgroundMusic";
 }
+

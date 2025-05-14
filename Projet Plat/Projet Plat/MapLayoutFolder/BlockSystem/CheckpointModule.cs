@@ -43,3 +43,4 @@ public static class CheckpointModule
         SoundModule.PlaySoundEffect(SoundData.Checkpoint);
     }
 }
+
