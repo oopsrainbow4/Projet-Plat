@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="" />
+    <list default="true" id="c776968d-cad6-4c24-8f35-023c42acf51d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Plat/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +21,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/oopsrainbow4/Projet-Plat.git",
+    "accountId": "f0e3b4ff-fcb2-4820-9c99-7830eeedbf00"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/6c417bfee934480d82db2f5bcc18f53b2800/6a/f494f16b/02000006pdb5.il" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -117,6 +125,8 @@
       <workItem from="1746443123024" duration="1579000" />
       <workItem from="1746767268791" duration="5009000" />
       <workItem from="1747132734469" duration="114000" />
+      <workItem from="1747372637154" duration="4657000" />
+      <workItem from="1747399317856" duration="1032000" />
     </task>
     <servers />
   </component>
