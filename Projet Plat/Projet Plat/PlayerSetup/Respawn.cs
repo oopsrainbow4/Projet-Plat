@@ -50,7 +50,7 @@ public class Respawn
     private void CheckRespawnConditions()
     {
         // Check if the player needs to be respawned
-        if (playerHP.Value == 0 || player.Y < -2000) // HP is 0 or player fell off the map
+        if (playerHP.Value == 0 || player.Y < -4000) // HP is 0 or player fell off the map
         {
             RespawnPlayer();
         }

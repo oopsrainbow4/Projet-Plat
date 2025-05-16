@@ -13,7 +13,7 @@ public static class HealingBoxModule
     {
         if (playerHP.Value >= CreatePlayer.MAX_HP) return; // Prevent overhealing
 
-        playerHP.Value += 5;
+        playerHP.Value += 3;
         SoundModule.PlaySoundEffect(SoundData.HealingBox);
         
         Vector originalPosition = healingBox.Position; // Save original position

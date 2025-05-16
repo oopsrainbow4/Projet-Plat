@@ -26,7 +26,7 @@ public static class SpikeModule
     private static void ApplyKnockback(PhysicsObject player, IPhysicsObject spike)
     {
         Vector knockbackDirection = (player.Position - spike.Position).Normalize();
-        player.Velocity = knockbackDirection * 600;
+        player.Velocity = knockbackDirection * 450;
     }
 }
 
