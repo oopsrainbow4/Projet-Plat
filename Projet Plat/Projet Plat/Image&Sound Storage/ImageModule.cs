@@ -3,7 +3,7 @@ using Jypeli;
 namespace Projet_Plat.Image_Sound_Storage;
 
 /// <summary>
-/// Handles centralized image loading for easy access throughout the game.
+/// Handles centralized image loading for easy access throughout the game....
 /// </summary>
 public static class ImageModule
 {
